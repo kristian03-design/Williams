@@ -60,7 +60,7 @@ body {
   width: 300px;
   margin-left: 60em;
   position: relative;
-  left: 50px;
+  left: 14%;
 }
 .search-container i {
   color: black;
@@ -81,6 +81,8 @@ body {
   align-items: center;
   gap: 12px;
   margin-left: 55px;
+  position: relative;
+  left: 100px;
 }
 .profile-name {
   color: #ff0000;
