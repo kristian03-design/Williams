@@ -28,17 +28,47 @@
         </section>
     </header>
     <section class="navigation">
-        <div>
-            <h3>Music</h3>
-            <span class="arrow">&#8249;</span>
-        </div>
-        <div>
-            <h3>Sports</h3>
-            <span class="arrow">&#8249;</span>
-        </div>
-        <h3>Services</h3>
-        <h3 class="ab">About us</h3>
-    </section>
+      <div>
+          <a href="music-category.html"><h3>Music</h3></a>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
+              <a href="acoustic-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Acoustic Guitars</a>
+              <a href="electric-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Electric Guitars</a>
+              <a href="bass-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Bass Guitars</a>
+              <a href="ukuleles.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Ukuleles</a>
+              <a href="amplifiers.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Amplifiers</a>
+            </div>
+            </div>
+            <script>
+            function toggleDropdown(element) {
+              const dropdown = element.nextElementSibling;
+              const isVisible = dropdown.style.display === 'block';
+              dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+            </script>
+      </div>
+      <div>
+          <a href="sport-category.html"><h3>Sports</h3></a>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
+              <a href="basketball.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball</a>
+              <a href="football.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball</a>
+              <a href="tennis.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball Trophies</a>
+              <a href="badminton.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball Trophies</a>
+            </div>
+            <script>
+            function toggleDropdown(element) {
+              const dropdown = element.nextElementSibling;
+              const isVisible = dropdown.style.display === 'block';
+              dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+            </script>
+      </div>
+      <a href="services-basicsetup.html"><h3>Services</h3></a>
+      </div>
+      <a href="landingpage.html"><h3 class="ab-landing">About us</h3></a>
+    </div>
+  </section>
 
 <!--Main Section-->
 <div class="container">

@@ -32,16 +32,44 @@
     <section class="navigation">
       <div>
           <a href="music-category.html"><h3>Music</h3></a>
-          <span class="arrow">&#8249;</span>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
+              <a href="acoustic-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Acoustic Guitars</a>
+              <a href="electric-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Electric Guitars</a>
+              <a href="bass-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Bass Guitars</a>
+              <a href="ukuleles.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Ukuleles</a>
+              <a href="amplifiers.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Amplifiers</a>
+            </div>
+            </div>
+            <script>
+            function toggleDropdown(element) {
+              const dropdown = element.nextElementSibling;
+              const isVisible = dropdown.style.display === 'block';
+              dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+            </script>
       </div>
       <div>
           <a href="sport-category.html"><h3>Sports</h3></a>
-          <span class="arrow">&#8249;</span>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
+              <a href="basketball.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball</a>
+              <a href="football.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball</a>
+              <a href="tennis.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball Trophies</a>
+              <a href="badminton.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball Trophies</a>
+            </div>
+            <script>
+            function toggleDropdown(element) {
+              const dropdown = element.nextElementSibling;
+              const isVisible = dropdown.style.display === 'block';
+              dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+            </script>
       </div>
       <a href="services-basicsetup.html"><h3>Services</h3></a>
-  </div>
+      </div>
       <a href="landingpage.html"><h3 class="ab-landing">About us</h3></a>
-  </div>
+    </div>
   </section>
 
     <div class="fullsetup-container">
@@ -150,7 +178,7 @@
               items.forEach(item => {
               const itemName = item.querySelector('h4').textContent.toLowerCase();
               const itemPrice = parseFloat(item.querySelector('p').textContent.replace(/[^\d.]/g, ''));
-              const itemBrand = itemName.split(' ')[0]; // Assuming brand is the first word in the name
+              const itemBrand = item.dataset.brand; // Use the data-brand attribute for filtering
 
               const matchesSearch = itemName.includes(searchQuery);
               const matchesPrice = itemPrice >= minPrice && itemPrice <= maxPrice;
@@ -172,92 +200,92 @@
             <button class="btn-popular" onclick="sortBy('newArrival')">New Arrival</button>
           </div>
           <div class="services-grid-sport">
-            <div class="service-item-sport">
+            <div class="service-item-sport" data-brand="Spalding">
               <img src="assets/image 19.png" alt="Fret leveling and Crowning"/>
               <h4> Spalding Official NBA Game Ball</h4>
               <p>₱5,500.00</p>
             </div>
-            <div class="service-item-sport">
+            <div class="service-item-sport" data-brand="Spalding">
               <img src="assets/Spalding NBA Zi_O Excel 1.png" alt="Cleaning" />
               <h4>Spalding NBA Zi/O Excel</h4>
               <p>₱3,200.00</p>
             </div>
-            <div class="service-item-sport">
+            <div class="service-item-sport" data-brand="Spalding">
               <img src="assets/Spalding Street Basketball 1.png" alt="Fretwires Polishing" />
               <h4>Spalding Street Basketball</h4>
               <p>₱1,800.00</p>
             </div>
-            <div class="service-item-sport">
+            <div class="service-item-sport" data-brand="Spalding">
               <img src="assets/Spalding NBA Dribbler 1.png" alt="Intonation Accuracy" />
               <h4>Spalding NBA Dribbler</h4>
               <p>₱1,500.00</p>
             </div>
-            <div class="service-item-sport">
+            <div class="service-item-sport" data-brand="Spalding">
               <img src="assets/Spalding Never Flat Basketball 1.png" alt="Fretboard Recondition" />
               <h4>Spalding Never Flat Basketball</h4>
               <p>₱3,800.00</p>
             </div>
-            <div class="service-item-sport">
+            <div class="service-item-sport" data-brand="Spalding">
               <img src="assets/Spalding Eco-Composite Basketball 1.png" alt="Neck Relief" />
               <h4>Spalding Eco-Composite Basketball</h4>
               <p>₱2,800.00</p>
             </div>
-            <div class="service-item-sport">
+            <div class="service-item-sport" data-brand="Spalding">
                 <img src="assets/Spalding TF-1000 Classic 1.png" alt="Neck Relief" />
                 <h4>Spalding TF-1000 Classic</h4>
                 <p>₱4,200.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Spalding">
                 <img src="assets/image 19.png" alt="Neck Relief" />
                 <h4>Spalding Rookie Gear</h4>
                 <p>₱1,200.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Spalding">
                 <img src="assets/image 19.png" alt="Neck Relief" />
                 <h4>Spalding Slam Jam</h4>
                 <p>₱1,000.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Spalding">
                 <img src="assets/image 19.png" alt="Neck Relief" />
                 <h4>Spalding NBA Mini Basketball</h4>
                 <p>₱1,200.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Spalding">
                 <img src="assets/image 19.png" alt="Neck Relief" />
                 <h4>Spalding TF-500 Basketball</h4>
                 <p>₱2,500.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Spalding">
                 <img src="assets/image 19.png" alt="Neck Relief" />
                 <h4>Spalding Basketball (Rubber) Youth Ball</h4>
                 <p>₱1,500.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Mikasa">
                 <img src="assets/mikasa.png" alt="Neck Relief" />
                 <h4>Mikasa V200W</h4>
                 <p>₱2,500.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Wilson">
                 <img src="assets/wilson-avp.webp" alt="Neck Relief" />
                 <h4>Wilson AVP Indoor Volleyball</h4>
                 <p>₱1,500.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Molten">
                 <img src="assets/molten-volleyball.jpg" alt="Neck Relief" />
                 <h4>Molten V5M5000 Indoor Volleyball</h4>
                 <p>₱2,500.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Nike">
                 <img src="assets/nike-volleyball.jpg" alt="Neck Relief" />
                 <h4>Nike Vapor Volleyball</h4>
                 <p>₱1,500.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Spalding">
                 <img src="assets/spalding-indoor-volleyball.jpg" alt="Neck Relief" />
                 <h4>Spalding TF-V5 Indoor Volleyball</h4>
                 <p>₱2,500.00</p>
               </div>
-              <div class="service-item-sport">
+              <div class="service-item-sport" data-brand="Asics">
                 <img src="assets/asics-volleyball.jpg" alt="Neck Relief" />
                 <h4>Asics VolleyBall</h4>
                 <p>₱1,500.00</p>

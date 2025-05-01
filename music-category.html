@@ -31,11 +31,39 @@
     <section class="navigation">
       <div>
           <a href="music-category.html"><h3>Music</h3></a>
-          <span class="arrow">&#8249;</span>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
+              <a href="acoustic-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Acoustic Guitars</a>
+              <a href="electric-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Electric Guitars</a>
+              <a href="bass-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Bass Guitars</a>
+              <a href="ukuleles.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Ukuleles</a>
+              <a href="amplifiers.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Amplifiers</a>
+            </div>
+            </div>
+            <script>
+            function toggleDropdown(element) {
+              const dropdown = element.nextElementSibling;
+              const isVisible = dropdown.style.display === 'block';
+              dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+            </script>
       </div>
       <div>
           <a href="sport-category.html"><h3>Sports</h3></a>
-          <span class="arrow">&#8249;</span>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
+              <a href="basketball.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball</a>
+              <a href="football.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball</a>
+              <a href="tennis.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball Trophies</a>
+              <a href="badminton.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball Trophies</a>
+            </div>
+            <script>
+            function toggleDropdown(element) {
+              const dropdown = element.nextElementSibling;
+              const isVisible = dropdown.style.display === 'block';
+              dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+            </script>
       </div>
       <a href="services-basicsetup.html"><h3>Services</h3></a>
       </div>
@@ -49,66 +77,80 @@
           <div class="hamburger-menu">
           </div>
           <h2>Categories</h2>
-          <div class="category-section">
+            <div class="category-section">
             <details>
-              <summary class="full-setup">Acoustic Guitars</summary>
+              <summary class="full-setup" onclick="filterItems('Acoustic Guitar')">Acoustic Guitars</summary>
               <ul>
-            <li><a href="#">Steel-String Acoustic</a></li>
-            <li><a href="#string-height">Classical (Nylon-String)</a></li>
-            <li><a href="#fretboard-recondition">Acoustic-Electric</a></li>
-            <li><a href="#intonation-accuracy">Resonator Guitar</a></li>
-            <li><a href="#fretwires-polishing">12-String Acoustic</a></li>
+              <li><a href="#" onclick="filterItems('Steel-String Acoustic')">Steel-String Acoustic</a></li>
+              <li><a href="#" onclick="filterItems('Classical (Nylon-String)')">Classical (Nylon-String)</a></li>
+              <li><a href="#" onclick="filterItems('Acoustic-Electric')">Acoustic-Electric</a></li>
+              <li><a href="#" onclick="filterItems('Resonator Guitar')">Resonator Guitar</a></li>
+              <li><a href="#" onclick="filterItems('12-String Acoustic')">12-String Acoustic</a></li>
               </ul>
             </details>
-          </div>
-          <div class="category-section">
+            </div>
+            <div class="category-section">
             <details>
-              <summary class="basic-setup">Electric Guitars</summary>
+              <summary class="basic-setup" onclick="filterItems('Electric Guitar')">Electric Guitars</summary>
               <ul>
-            <li><a href="#string-radius-adjustment">Solid-Body Electric</a></li>
-            <li><a href="#fretboard-recondition">Semi-Hollow Body Electric</a></li>
-            <li><a href="#intonation-accuracy">Hollow Body Electric</a></li>
-            <li><a href="#right-neck-relief">7-String Electric</a></li>
-            <li><a href="#minor-cleaning">8-String Electric</a></li>
-            <li><a href="#minor-cleaning">Baritone Electric</a></li>
+              <li><a href="#" onclick="filterItems('Solid-Body Electric')">Solid-Body Electric</a></li>
+              <li><a href="#" onclick="filterItems('Semi-Hollow Body Electric')">Semi-Hollow Body Electric</a></li>
+              <li><a href="#" onclick="filterItems('Hollow Body Electric')">Hollow Body Electric</a></li>
+              <li><a href="#" onclick="filterItems('7-String Electric')">7-String Electric</a></li>
+              <li><a href="#" onclick="filterItems('8-String Electric')">8-String Electric</a></li>
+              <li><a href="#" onclick="filterItems('Baritone Electric')">Baritone Electric</a></li>
               </ul>
             </details>
-          </div>
-          <div class="category-section">
+            </div>
+            <div class="category-section">
             <details>
-              <summary class="basic-setup">Bass Guitars</summary>
+              <summary class="basic-setup"  onclick="filterItems('Bass Guitar')">Bass Guitars</summary>
               <ul>
-            <li><a href="#string-radius-adjustment">4-String Bass</a></li>
-            <li><a href="#fretboard-recondition">5-String Bass</a></li>
-            <li><a href="#intonation-accuracy">Fretless Bass</a></li>
-            <li><a href="#right-neck-relief">Acoustic Bass Guitar</a></li>
-            <li><a href="#minor-cleaning">8-String Electric</a></li>
+              <li><a href="#" onclick="filterItems('4-String Bass')">4-String Bass</a></li>
+              <li><a href="#" onclick="filterItems('5-String Bass')">5-String Bass</a></li>
+              <li><a href="#" onclick="filterItems('Fretless Bass')">Fretless Bass</a></li>
+              <li><a href="#" onclick="filterItems('Acoustic Bass Guitar')">Acoustic Bass Guitar</a></li>
+              <li><a href="#" onclick="filterItems('8-String Electric')">8-String Electric</a></li>
               </ul>
             </details>
-          </div>
-          <div class="category-section">
+            </div>
+            <div class="category-section">
             <details>
-              <summary class="basic-setup">Ukeleles</summary>
+              <summary class="basic-setup"  onclick="filterItems('Ukelele')">Ukeleles</summary>
               <ul>
-            <li><a href="#string-radius-adjustment">Soprano Ukulele</a></li>
-            <li><a href="#fretboard-recondition">Concert Ukulele</a></li>
-            <li><a href="#intonation-accuracy">Baritone Ukulele</a></li>
-            <li><a href="#right-neck-relief">Tenor Ukulele</a></li>
+              <li><a href="#" onclick="filterItems('Soprano Ukulele')">Soprano Ukulele</a></li>
+              <li><a href="#" onclick="filterItems('Concert Ukulele')">Concert Ukulele</a></li>
+              <li><a href="#" onclick="filterItems('Baritone Ukulele')">Baritone Ukulele</a></li>
+              <li><a href="#" onclick="filterItems('Tenor Ukulele')">Tenor Ukulele</a></li>
               </ul>
             </details>
-          </div>
-          <div class="category-section">
+            </div>
+            <div class="category-section">
             <details>
-              <summary class="basic-setup">Amplifiers</summary>
+              <summary class="basic-setup"  onclick="filterItems('Amplifiers')">Amplifiers</summary>
               <ul>
-            <li><a href="#string-radius-adjustment">Guitar Amplifiers</a></li>
-            <li><a href="#fretboard-recondition">Bass Amplifiers</a></li>
-            <li><a href="#intonation-accuracy">Electric Guitar Amplifiers</a></li>
-            <li><a href="#right-neck-relief">Power Amplifiers</a></li>
-            <li><a href="#minor-cleaning">Microphone/PA Amplifiers</a></li>
+              <li><a href="#" onclick="filterItems('Guitar Amplifiers')">Guitar Amplifiers</a></li>
+              <li><a href="#" onclick="filterItems('Bass Amplifiers')">Bass Amplifiers</a></li>
+              <li><a href="#" onclick="filterItems('Electric Guitar Amplifiers')">Electric Guitar Amplifiers</a></li>
+              <li><a href="#" onclick="filterItems('Power Amplifiers')">Power Amplifiers</a></li>
+              <li><a href="#" onclick="filterItems('Microphone/PA Amplifiers')">Microphone/PA Amplifiers</a></li>
               </ul>
             </details>
-          </div>
+            </div>
+
+            <script>
+            function filterItems(category) {
+              const items = document.querySelectorAll('.service-item-music');
+              items.forEach(item => {
+              const title = item.querySelector('h4').textContent.toLowerCase();
+              if (title.includes(category.toLowerCase())) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+              });
+            }
+            </script>
           <div class="category-section">
             <details>
               <summary class="basic-setup">Strings and other Components</summary>
@@ -158,7 +200,7 @@
               items.forEach(item => {
                 const title = item.querySelector('h4').textContent.toLowerCase();
                 const price = parseFloat(item.querySelector('p').textContent.replace(/[^\d.]/g, ''));
-                const brand = title.split(' ')[0]; // Assuming the brand is the first word in the title
+                const brand = item.getAttribute('data-brand'); // Use data-brand attribute
 
                 const matchesSearch = title.includes(searchFilter);
                 const matchesPrice = price >= minPrice && price <= maxPrice;
@@ -180,52 +222,52 @@
             <button class="btn-popular" onclick="sortBy('newArrival')">New Arrival</button>
           </div>
           <div class="services-grid-music">
-            <div class="service-item-music">
+            <div class="service-item-music" data-brand="Yamaha">
               <a href="product-description.html"><img src="assets/Yamaha FG800.png" alt="Fret leveling and Crowning"/></a>
-              <h4>Yamaha FG800</h4>
+              <h4>Yamaha FG800 Acoustic Guitar</h4>
               <p>₱15,000.00</p>
             </div>
-            <div class="service-item-music">
+            <div class="service-item-music" data-brand="Fender">
               <img src="assets/drive-download-20250310T045422Z-001/Fender CD-60S.png" alt="Cleaning" />
-              <h4>Fender CD-60S</h4>
+              <h4>Fender CD-60S  Acoustic Guitar</h4>
               <p>₱13,000.00</p>
             </div>
-            <div class="service-item-music">
-              <img src="assets/Taylor GS Mini.png" alt="Fretwires Polishing" />
-              <h4>Taylor GS Mini</h4>
+            <div class="service-item-music" data-brand="Taylor">
+              <img src="assets/Taylor GS Mini.png" />
+              <h4>Taylor GS Mini  Acoustic Guitar</h4>
               <p>₱35,000.00</p>
             </div>
-            <div class="service-item-music">
-              <img src="assets/drive-download-20250310T045422Z-001/Ibanez AW54OPN.png" alt="Intonation Accuracy" />
-              <h4>Ibanez AW54OPN</h4>
+            <div class="service-item-music" data-brand="Ibanez">
+              <img src="assets/drive-download-20250310T045422Z-001/Ibanez AW54OPN.png" data-brand="Ibanez" />
+              <h4>Ibanez AW54OPN  Acoustic Guitar</h4>
               <p>₱8,000.00</p>
             </div>
             <div class="service-item-music">
               <img src="assets/Martin D-28.png" alt="Fretboard Recondition" />
-              <h4>Martin D-28</h4>
+              <h4>Martin D-28  Acoustic Guitar</h4>
               <p>₱30,000.00</p>
             </div>
-            <div class="service-item-music">
-              <img src="assets/drive-download-20250310T045422Z-001/Epiphone DR-100.png" alt="Neck Relief" />
-              <h4>Epiphone DR-100</h4>
+            <div class="service-item-music" data-brand="Epiphone">
+              <img src="assets/drive-download-20250310T045422Z-001/Epiphone DR-100.png"  />
+              <h4>Epiphone DR-100  Acoustic Guitar</h4>
               <p>₱8,500.00</p>
             </div>
             <div class="service-item-music">
                 <img src="assets/Takamine GD11MCE.png" alt="Neck Relief" />
-                <h4>Takamine GD11MCE</h4>
+                <h4>Takamine GD11MCE  Acoustic Guitar</h4>
                 <p>₱7,500.00</p>
               </div>
               <div class="service-item-music">
                 <img src="assets/drive-download-20250310T045422Z-001/Cort AD810.png" alt="Neck Relief" />
-                <h4>Cort AD810</h4>
+                <h4>Cort AD810  Acoustic Guitar</h4>
                 <p>₱8,000.00</p>
               </div>
               <div class="service-item-music">
                 <img src="assets/drive-download-20250310T045422Z-001/Seagull S6 Original.png" alt="Neck Relief" />
-                <h4>Seagull S6 Original</h4>
+                <h4>Seagull S6 Original  Acoustic Guitar</h4>
                 <p>₱12,500.00</p>
               </div>
-              <div class="service-item-music">
+              <div class="service-item-music" data-brand="Ibanez">
                 <img src="assets/ibanez-electric.jpg" alt="Neck Relief" />
                 <h4>Ibanez GRX70QA Electric Guitar</h4>
                 <p>₱12,500.00</p>
@@ -235,17 +277,17 @@
                 <h4>Squier Affinity Stratocaster Electric Guitar</h4>
                 <p>₱8,000.00</p>
               </div>
-              <div class="service-item-music">
+              <div class="service-item-music" data-brand="Yamaha">
                 <img src="assets/yamaha-electric.jpg" alt="Neck Relief" />
                 <h4>Yamaha Pacifica 112V Electric Guitar</h4>
                 <p>₱12,500.00</p>
               </div>
-              <div class="service-item-music">
+              <div class="service-item-music" data-brand="Fender">
                 <img src="assets/Fender Player Stratocaster.jpg" alt="Neck Relief" />
                 <h4>Fender Player Stratocaster Electric Guitar</h4>
                 <p>₱12,500.00</p>
               </div>
-              <div class="service-item-music">
+              <div class="service-item-music" data-brand="Gibson">
                 <img src="assets/gibson.png" alt="Neck Relief" />
                 <h4>Gibson ES-335 Electric Guitar</h4>
                 <p>₱8,000.00</p>
@@ -269,6 +311,56 @@
                 <img src="assets/fretless.webp" alt="Neck Relief" />
                 <h4>Cort B4FL MHPZ Fretless Bass Guitar</h4>
                 <p>₱12,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/soprano-ukelele.png" alt="Kala Ukulele Soprano Satin Mahogany with EQ KA-SE" />
+                <h4>Kala Ukulele Soprano Satin Mahogany with EQ KA-SE</h4>
+                <p>₱7,687.50</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/davis-ukelele.avif" alt="Neck Relief" />
+                <h4>Davis Concert Ukelele</h4>
+                <p>₱10,250.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/baritone-ukelele.png" alt="Neck Relief" />
+                <h4>Classic Baritone Ukelele</h4>
+                <p>₱10,250.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/soprano-ukelele.png" alt="Neck Relief" />
+                <h4>Kala Ukulele Soprano Satin Mahogany with EQ KA-SE</h4>
+                <p>₱7,687.50</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/davis-ukelele.avif" alt="Neck Relief" />
+                <h4>Davis Concert Ukelele</h4>
+                <p>₱10,250.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/baritone-ukelele.png" alt="Neck Relief" />
+                <h4>Classic Baritone Ukelele</h4>
+                <p>₱10,250.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/soprano-ukelele.png" alt="Neck Relief" style="width: 100%;" />
+                <h4>Kala Ukulele Soprano Satin Mahogany with EQ KA-SE</h4>
+                <p>₱7,687.50</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/davis-ukelele.jpg" alt="Neck Relief" />
+                <h4>Davis Concert Ukelele</h4>
+                <p>₱10,250.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/baritone-ukelele.png" alt="Neck Relief" style="width: 100%;" />
+                <h4>Classic Baritone Ukelele</h4>
+                <p>₱10,250.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/baritone-ukelele.png" alt="Neck Relief" />
+                <h4>Classic Baritone Ukelele</h4>
+                <p>₱10,250.00</p>
               </div>
             </div>
             <div class="pagination">
