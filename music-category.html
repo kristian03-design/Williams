@@ -123,27 +123,55 @@
           </div>
           <div class="filter-section">
             <h3>Search Filter</h3>
-            <input type="text" placeholder="Search..." />
+            <input type="text" id="searchFilter" placeholder="Search..." oninput="applyFilters()" />
             <h3>Price Range</h3>
             <div class="price-range">
-              <input type="number" placeholder="MIN" />
-              <input type="number" placeholder="MAX" />
-         </div>
-         <div class="apply-button">Apply</div>
+              <input type="number" id="minPrice" placeholder="MIN" oninput="applyFilters()" />
+              <input type="number" id="maxPrice" placeholder="MAX" oninput="applyFilters()" />
+            </div>
+            <div class="apply-button" onclick="applyFilters()">Apply</div>
             <div class="guitar-type">
-                <h3>Brands</h3>
-              <input type="checkbox" id="bass-guitar" />
-              <label for="bass-guitar">Fender</label><br>
-              <input type="checkbox" id="acoustic-guitar"/>
-              <label for="acoustic-guitar">Gibson</label><br>
-              <input type="checkbox" id="electric-guitar"/>
-              <label for="electric-guitar">Ybanez</label><br>
-              <input type="checkbox" id="electric-guitar"/>
-                <label for="electric-guitar">Yamaha</label><br>
-                <input type="checkbox" id="electric-guitar"/>
-                <label for="electric-guitar">Epiphone</label><br>
+              <h3>Brands</h3>
+              <input type="checkbox" id="fender" value="Fender" onchange="applyFilters()" />
+              <label for="fender">Fender</label><br>
+              <input type="checkbox" id="gibson" value="Gibson" onchange="applyFilters()" />
+              <label for="gibson">Gibson</label><br>
+              <input type="checkbox" id="ibanez" value="Ibanez" onchange="applyFilters()" />
+              <label for="ibanez">Ibanez</label><br>
+              <input type="checkbox" id="yamaha" value="Yamaha" onchange="applyFilters()" />
+              <label for="yamaha">Yamaha</label><br>
+              <input type="checkbox" id="epiphone" value="Epiphone" onchange="applyFilters()" />
+              <label for="epiphone">Epiphone</label><br>
             </div>
           </div>
+
+          <script>
+            function applyFilters() {
+              const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
+              const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+              const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+              const selectedBrands = Array.from(document.querySelectorAll('.guitar-type input[type="checkbox"]:checked')).map(
+                checkbox => checkbox.value
+              );
+
+              const items = document.querySelectorAll('.service-item-music');
+              items.forEach(item => {
+                const title = item.querySelector('h4').textContent.toLowerCase();
+                const price = parseFloat(item.querySelector('p').textContent.replace(/[^\d.]/g, ''));
+                const brand = title.split(' ')[0]; // Assuming the brand is the first word in the title
+
+                const matchesSearch = title.includes(searchFilter);
+                const matchesPrice = price >= minPrice && price <= maxPrice;
+                const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(brand);
+
+                if (matchesSearch && matchesPrice && matchesBrand) {
+                  item.style.display = 'block';
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+            }
+          </script>
         </aside>
         <!-- Main Content -->
         <main class="main-content">

@@ -105,30 +105,66 @@
             </ul>
             </details>
           </div>
-          <div class="filter-section">
+            <div class="filter-section">
             <h3>Search Filter</h3>
-            <input type="text" placeholder="Search..." />
+            <input type="text" id="search-filter" placeholder="Search..." />
             <h3>Price Range</h3>
             <div class="price-range">
-              <input type="number" placeholder="MIN" />
-              <input type="number" placeholder="MAX" />
-         </div>
-         <div class="apply-button">Apply</div>
-            <div class="guitar-type">
-                <h3>Brands</h3>
-              <input type="checkbox" id="bass-guitar" />
-              <label for="bass-guitar">Nike</label><br>
-              <input type="checkbox" id="acoustic-guitar"/>
-              <label for="acoustic-guitar">Spalding</label><br>
-              <input type="checkbox" id="electric-guitar"/>
-              <label for="electric-guitar">Wilson</label><br>
-              <input type="checkbox" id="electric-guitar"/>
-                <label for="electric-guitar">Molten</label><br>
-                <input type="checkbox" id="electric-guitar"/>
-                <label for="electric-guitar">Mikasa</label><br>
+              <input type="number" id="min-price" placeholder="MIN" />
+              <input type="number" id="max-price" placeholder="MAX" />
             </div>
-          </div>
-        </aside>
+            <div class="apply-button" id="apply-filters">Apply</div>
+            <div class="guitar-type">
+              <h3>Brands</h3>
+              <input type="checkbox" id="nike" data-brand="Nike" />
+              <label for="nike">Nike</label><br>
+              <input type="checkbox" id="spalding" data-brand="Spalding" />
+              <label for="spalding">Spalding</label><br>
+              <input type="checkbox" id="wilson" data-brand="Wilson" />
+              <label for="wilson">Wilson</label><br>
+              <input type="checkbox" id="molten" data-brand="Molten" />
+              <label for="molten">Molten</label><br>
+              <input type="checkbox" id="mikasa" data-brand="Mikasa" />
+              <label for="mikasa">Mikasa</label><br>
+            </div>
+            </div>
+          </aside>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-filter');
+            const minPriceInput = document.getElementById('min-price');
+            const maxPriceInput = document.getElementById('max-price');
+            const applyButton = document.getElementById('apply-filters');
+            const brandCheckboxes = document.querySelectorAll('.guitar-type input[type="checkbox"]');
+            const items = document.querySelectorAll('.service-item-sport');
+
+            function filterItems() {
+              const searchQuery = searchInput.value.toLowerCase();
+              const minPrice = parseFloat(minPriceInput.value) || 0;
+              const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
+              const selectedBrands = Array.from(brandCheckboxes)
+              .filter(checkbox => checkbox.checked)
+              .map(checkbox => checkbox.dataset.brand);
+
+              items.forEach(item => {
+              const itemName = item.querySelector('h4').textContent.toLowerCase();
+              const itemPrice = parseFloat(item.querySelector('p').textContent.replace(/[^\d.]/g, ''));
+              const itemBrand = itemName.split(' ')[0]; // Assuming brand is the first word in the name
+
+              const matchesSearch = itemName.includes(searchQuery);
+              const matchesPrice = itemPrice >= minPrice && itemPrice <= maxPrice;
+              const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(itemBrand);
+
+              item.style.display = matchesSearch && matchesPrice && matchesBrand ? 'block' : 'none';
+              });
+            }
+
+            applyButton.addEventListener('click', filterItems);
+            searchInput.addEventListener('input', filterItems);
+            brandCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterItems));
+            });
+          </script>
         <!-- Main Content -->
         <main class="main-content">
           <div class="sort-options">
