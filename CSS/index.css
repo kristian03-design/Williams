@@ -182,14 +182,21 @@ input {
     color: #ccc;
 }
 
-.ab {
-    margin-right: 4%;
-    
-}
-
 .ab-landing {
-    margin-right: 65px;
+    margin-right: 60px;
 
+}
+.arrow-admin{
+    font-size: clamp(16px, 2vw, 24px);  
+    color: white;
+    margin-left: 5px;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    font-weight: 400;
+    margin-right: 10px;
+    position: relative;
+    top: 5px;
+    margin-left: 10px;
 }
 
 

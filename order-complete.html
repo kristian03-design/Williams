@@ -28,47 +28,74 @@
         </section>
     </header>
     <section class="navigation">
-        <div>
-            <a href="music-category.html"><h3>Music</h3></a>
-              <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
-              <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
-                <a href="acoustic-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Acoustic Guitars</a>
-                <a href="electric-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Electric Guitars</a>
-                <a href="bass-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Bass Guitars</a>
-                <a href="ukuleles.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Ukuleles</a>
-                <a href="amplifiers.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Amplifiers</a>
-              </div>
-              </div>
-              <script>
-              function toggleDropdown(element) {
-                const dropdown = element.nextElementSibling;
-                const isVisible = dropdown.style.display === 'block';
-                dropdown.style.display = isVisible ? 'none' : 'block';
-              }
-              </script>
-        </div>
-        <div>
-            <a href="sport-category.html"><h3>Sports</h3></a>
-              <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
-              <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 12%;">
-                <a href="basketball.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball</a>
-                <a href="football.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball</a>
-                <a href="tennis.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Basketball Trophies</a>
-                <a href="badminton.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px;">Volleyball Trophies</a>
-              </div>
-              <script>
-              function toggleDropdown(element) {
-                const dropdown = element.nextElementSibling;
-                const isVisible = dropdown.style.display === 'block';
-                dropdown.style.display = isVisible ? 'none' : 'block';
-              }
-              </script>
-        </div>
-        <a href="services-basicsetup.html"><h3>Services</h3></a>
-        </div>
-        <a href="landingpage.html"><h3 class="ab-landing">About us</h3></a>
+      <div>
+          <a href="music-category.html"><h3>Music</h3></a>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 13%;">
+              <a href="acoustic-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Acoustic Guitars</a>
+              <a href="electric-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Electric Guitars</a>
+              <a href="bass-guitars.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Bass Guitars</a>
+              <a href="ukuleles.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';;">Ukuleles</a>
+              <a href="amplifiers.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Amplifiers</a>
+            </div>
+            </div>
+            <script>
+            function toggleDropdown(element) {
+              const dropdown = element.nextElementSibling;
+              const isVisible = dropdown.style.display === 'block';
+              dropdown.style.display = isVisible ? 'none' : 'block';
+            }
+            </script>
       </div>
-    </section>
+      <div>
+          <a href="sport-category.html"><h3>Sports</h3></a>
+            <span class="arrow" onclick="toggleDropdown(this)">&#8249;</span>
+            <div class="dropdown-menu" style="display: none; position: absolute; background-color: #f9f9f9; border: 1px solid #ddd; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 100; border-radius: 5px; width: 200px; top: 13%;">
+              <a href="basketball.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Basketball</a>
+              <a href="football.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Volleyball</a>
+              <a href="tennis.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Basketball Trophies</a>
+              <a href="badminton.html" style="display: block; padding: 8px 12px; text-decoration: none; color: #333; font-size: 14px; border-radius: 3px; background-color: #f9f9f9;" onmouseover="this.style.backgroundColor='#ae1919'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#f9f9f9'; this.style.color='#333';">Volleyball Trophies</a>
+            </div>
+            <script>
+             function toggleDropdown(element) {
+                const dropdowns = document.querySelectorAll('.dropdown-menu');
+                const dropdown = element.nextElementSibling;
+
+                dropdowns.forEach(menu => {
+                    if (menu !== dropdown) {
+                        menu.style.display = 'none';
+                    }
+                });
+
+                const isVisible = dropdown.style.display === 'block';
+                dropdown.style.display = isVisible ? 'none' : 'block';
+             }
+
+             window.addEventListener('click', (event) => {
+                const dropdowns = document.querySelectorAll('.dropdown-menu');
+                const arrows = document.querySelectorAll('.arrow');
+
+                let clickedInsideDropdown = false;
+
+                dropdowns.forEach((dropdown, index) => {
+                    if (dropdown.contains(event.target) || arrows[index].contains(event.target)) {
+                        clickedInsideDropdown = true;
+                    }
+                });
+
+                if (!clickedInsideDropdown) {
+                    dropdowns.forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                }
+             });
+            </script>
+      </div>
+      <a href="services-basicsetup.html"><h3>Services</h3></a>
+      </div>
+      <a href="#"><h3 class="ab-landing">About us</h3></a>
+    </div>
+  </section>
 
 <!--Main Section-->
 <div class="container">
