@@ -1,0 +1,221 @@
+.body{
+ margin: 0;
+  padding: 30px;
+  color: #333;
+}
+.fg800-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .fg800-main-content {
+    display: flex;
+    gap: 40px;
+    margin-top: 1.5rem;
+  }
+
+  .fg800-images-section {
+    flex: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fg800-main-image img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-left: 12vw;
+  }
+
+  .fg800-thumbnail-gallery {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 12vw;
+  }
+
+  .fg800-thumbnail-item {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .fg800-thumbnail-selected {
+    border: 2px solid #d90000;
+    border-radius: 5px;
+    padding: 2px;
+  }
+
+  .fg800-thumbnail-selected img {
+    width: 120px;
+    height: 160px;
+  }
+
+  .fg800-thumbnail-arrow {
+    font-size: 3.5rem;
+    cursor: pointer;
+  }
+
+  .fg800-info-section {
+    flex: 2;
+    width: 100%;
+    max-width: 1050px;
+
+  }
+
+  .fg800-product-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .fg800-price-info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .fg800-sale-price {
+    color: #b30000;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .fg800-original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 18px;
+  }
+
+  .fg800-description-text p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+  }
+
+  .fg800-options-section {
+    margin-bottom: 25px;
+  }
+
+  .fg800-option-label {
+    font-weight: bold;
+    margin: 15px 0 10px;
+  }
+
+  .fg800-color-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .fg800-color-button {
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .fg800-color-button.active {
+    border-color: #d90000;
+    background-color: #f5f5f5;
+  }
+
+  .fg800-stock-info {
+    font-size: 12px;
+    color: #777;
+    margin-left: 10px;
+  }
+
+  .fg800-quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .fg800-quantity-btn {
+    width: 32px;
+    height: 32px;
+    background-color: #a80000;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .fg800-quantity-input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 2px 10px;
+  }
+
+  .fg800-action-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .fg800-buy-now {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #a80000;
+    color: #fff;
+    cursor: pointer;
+  }
+  .fg800-add-to-cart{
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #d90000;
+  }
+
+  .fg800-divider {
+    border: none;
+    height: 1px;
+    background: #ccc;
+    margin: 50px 0 30px;
+  }
+
+  .fg800-specifications {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .fg800-spec-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .fg800-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .fg800-spec-table td {
+    padding: 10px 5px;
+    vertical-align: top;
+
+  }
+
+  .fg800-spec-label {
+    font-weight: 600;
+    width: 50%;
+    color: #000000;
+  }

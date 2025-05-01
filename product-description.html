@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\css\index.css">
+    <link rel="stylesheet" href="\css\product-description.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nametag">
+            <a href="landingpage.html"><img src="assets/williams.png" alt="Williams Logo"></a>
+        </div>
+        <section class="leftheader">
+            <div class="SContainer">
+                <input type="search" placeholder="Search William's....">
+                <img src="assets/Trailing-Elements.png" alt="">
+            </div>
+            <img src="assets/notif-bell.png" alt="Notification Bell" class="icon" style="cursor: pointer; font-size: small;">
+            <img src="assets/shopping-cart.png" alt="Shopping Cart" class="icon" style="cursor: pointer;">
+            <div class="user-profile-dropdown" style="position: relative; display: inline-block; margin-top: 5px;">
+                <img id="myAvatar" src="assets/Generic-avatar.png" alt="User Icon" style="cursor: pointer; width: 40px; height: 40px; border-radius: 50%;">
+                <div class="dropdown-content" style="display: none; position: absolute; background-color: #f9f9f9; min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1; border-radius: 5px; right: 10%;">
+                    <a href="./phpComponents/userProfile.html" style="color: black; padding: 12px 16px; text-decoration: none; display: block;" onmouseover="this.style.backgroundColor='#f1f1f1';" onmouseout="this.style.backgroundColor='';">View Profile</a>
+                    <a href="./phpComponents/settings.html" style="color: black; padding: 12px 16px; text-decoration: none; display: block;" onmouseover="this.style.backgroundColor='#f1f1f1';" onmouseout="this.style.backgroundColor='';">Settings</a>
+                    <a href="./phpComponents/logout.html" style="color: black; padding: 12px 16px; text-decoration: none; display: block;" onmouseover="this.style.backgroundColor='#f1f1f1';" onmouseout="this.style.backgroundColor='';">Logout</a>
+                </div>
+            </div>
+        </section>
+    </header>
+    <section class="navigation">
+        <div>
+            <a href="music-category.html"><h3>Music</h3></a>
+            <span class="arrow">&#8249;</span>
+        </div>
+        <div>
+            <a href="sport-category.html"><h3>Sports</h3></a>
+            <span class="arrow">&#8249;</span>
+        </div>
+        <a href="services-basicsetup.html"><h3>Services</h3></a>
+    </div>
+        <a href="landingpage.html"><h3 class="ab-landing">About us</h3></a>
+    </div>
+    </section>
+
+    <div class="fg800-page-wrapper">
+        <div class="fg800-main-content">
+          <div class="fg800-images-section">
+            <div class="fg800-main-image">
+              <img id="mainImage" src="assets/Yamaha FG800.png" alt="Yamaha FG800">
+            </div>
+      
+            <div class="fg800-thumbnail-gallery">
+              <img src="assets/drive-download-20250310T045422Z-001/Fender CD-60S.png" alt="Thumbnail 1" class="fg800-thumbnail-item" onclick="changeMainImage(this)">
+              <img src="assets/drive-download-20250310T045422Z-001/Cort AD810.png" alt="Thumbnail 2" class="fg800-thumbnail-item" onclick="changeMainImage(this)">
+              <div class="fg800-thumbnail-selected">
+                <img src="assets/Yamaha FG800.png" alt="Thumbnail 3" onclick="changeMainImage(this)">
+              </div>
+            </div>
+          </div>
+      
+          <div class="fg800-info-section">
+            <h1 class="fg800-product-title">Yamaha FG800</h1>
+      
+            <div class="fg800-price-info">
+              <span class="fg800-sale-price">₱ 15,000.00</span>
+              <span class="fg800-original-price">₱ 20,000.00</span>
+            </div>
+      
+            <div class="fg800-description-text">
+              <p>FG800<br>
+              Yamaha’s standard acoustic model, with simple and traditional looks and outstanding quality, at an affordable price.<br><br>
+              • Traditional Western Body<br>
+              • Solid Spruce Top<br>
+              • Nato (Durable Back & Sides)<br>
+              • Neck Nato<br>
+              • Fingerboard Rosewood<br>
+              • Newly Developed Scalloped Bracing<br>
+              • Traditional looks and outstanding quality</p>
+            </div>
+      
+            <div class="fg800-options-section">
+      
+              <p class="fg800-option-label">Color</p>
+              <div class="fg800-color-options">
+                <button class="fg800-color-button active" onclick="selectColor(this)">Natural</button>
+                <button class="fg800-color-button" onclick="selectColor(this)">Dark Brown</button>
+                <button class="fg800-color-button" onclick="selectColor(this)">Brown</button>
+              </div>
+      
+              <p class="fg800-option-label">Quantity <span class="fg800-stock-info">(35 pieces available)</span></p>
+              <div class="fg800-quantity-controls">
+                <button class="fg800-quantity-btn" onclick="updateQuantity(-1)">-</button>
+                <input type="text" value="1" class="fg800-quantity-input" id="quantityInput">
+                <button class="fg800-quantity-btn" onclick="updateQuantity(1)">+</button>
+              </div>
+      
+            </div>
+      
+            <div class="fg800-action-buttons">
+                <input type="hidden" name="productName" value="Yamaha FG800">
+                <input type="hidden" name="productPrice" value="15000">
+                <input type="hidden" name="productColor" id="selectedColorInput" value="Natural">
+                <input type="hidden" name="productQuantity" id="selectedQuantityInput" value="1">
+                <a href="shopping-cart.html"><button type="submit" class="fg800-add-to-cart">Add to Cart</button></a>
+                <input type="hidden" name="productName" value="Yamaha FG800">
+                <input type="hidden" name="productPrice" value="15000">
+                <input type="hidden" name="productColor" id="selectedColorInputBuyNow" value="Natural">
+                <input type="hidden" name="productQuantity" id="selectedQuantityInputBuyNow" value="1">
+                <a href="checkout.html"><button type="submit" class="fg800-buy-now">Buy now</button></a>
+            </div>
+       
+          </div>
+        </div>
+      </div>
+      
+      <hr class="fg800-divider">
+      
+      <div class="fg800-specifications">
+        <h2 class="fg800-spec-title">Product Specification</h2>
+        <table class="fg800-spec-table">
+          <tr><td class="fg800-spec-label">Category:</td><td>Music/Acoustic Guitar/Steel-String Acoustic/ Yamaha FG800</td></tr>
+          <tr><td class="fg800-spec-label">Stock:</td><td>35 pieces</td></tr>
+          <tr><td class="fg800-spec-label">Brand:</td><td>Yamaha</td></tr>
+          <tr><td class="fg800-spec-label">Top:</td><td>Solid Sitka Spruce</td></tr>
+          <tr><td class="fg800-spec-label">Neck:</td><td>Nato</td></tr>
+          <tr><td class="fg800-spec-label">Nut Width:</td><td>1.69” (43mm)</td></tr>
+          <tr><td class="fg800-spec-label">Bridge:</td><td>Rosewood</td></tr>
+          <tr><td class="fg800-spec-label">Finish:</td><td>Gloss</td></tr>
+          <tr><td class="fg800-spec-label">Back & Sides:</td><td>Nato</td></tr>
+          <tr><td class="fg800-spec-label">Body Shape:</td><td>Traditional Western (Dreadnought)</td></tr>
+          <tr><td class="fg800-spec-label">Scale Length:</td><td>25” (634mm)</td></tr>
+          <tr><td class="fg800-spec-label">Fingerboard:</td><td>Rosewood</td></tr>
+          <tr><td class="fg800-spec-label">Number of Frets:</td><td>20</td></tr>
+        </table>
+      </div>
+      <script>
+        function selectColor(button) {
+          const buttons = document.querySelectorAll('.fg800-color-button');
+          buttons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+        }
+
+        function updateQuantity(change) {
+          const quantityInput = document.getElementById('quantityInput');
+          let currentQuantity = parseInt(quantityInput.value) || 1;
+          currentQuantity += change;
+          if (currentQuantity < 1) currentQuantity = 1;
+          quantityInput.value = currentQuantity;
+        }
+
+        function addToCart() {
+          const quantity = document.getElementById('quantityInput').value;
+          const selectedColor = document.querySelector('.fg800-color-button.active').textContent;
+          alert(`Added ${quantity} item(s) of color ${selectedColor} to the cart.`);
+        }
+
+        function buyNow() {
+          const quantity = document.getElementById('quantityInput').value;
+          const selectedColor = document.querySelector('.fg800-color-button.active').textContent;
+          alert(`Proceeding to buy ${quantity} item(s) of color ${selectedColor}.`);
+        }
+      </script>
+        <script>
+            function changeMainImage(thumbnail) {
+              const mainImage = document.getElementById('mainImage');
+              mainImage.src = thumbnail.src;
+              mainImage.alt = thumbnail.alt;
+            }
+          </script>
+               <script>
+                function updateFormInputs() {
+                  const selectedColor = document.querySelector('.fg800-color-button.active').textContent;
+                  const quantity = document.getElementById('quantityInput').value;
+                  document.getElementById('selectedColorInput').value = selectedColor;
+                  document.getElementById('selectedQuantityInput').value = quantity;
+                }
+  
+                function updateFormInputsBuyNow() {
+                  const selectedColor = document.querySelector('.fg800-color-button.active').textContent;
+                  const quantity = document.getElementById('quantityInput').value;
+                  document.getElementById('selectedColorInputBuyNow').value = selectedColor;
+                  document.getElementById('selectedQuantityInputBuyNow').value = quantity;
+                }
+              </script>
+      </body>
+      </html>
+      

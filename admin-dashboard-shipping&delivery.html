@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./CSS/index.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard.css">
+        <link rel="stylesheet" href="./CSS/dashboard-product.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-orders.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-customer.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-transaction.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-salesreport.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-shipping&delivery.css">
+
+        <script src="https://kit.fontawesome.com/e588cb9d47.js"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss"></script>
+        <title>William's Dashboard</title>
+    </head>
+    <body>
+        <div class="dash-sidebar">
+            <div class="dash-logo">
+                <img src="assets/williams.png" alt="William's Logo">
+            </div>
+            <nav>
+                <a href="admin-dashboard.html"><i class="fa-solid fa-gauge"></i>
+                    Dashboard</a>
+                <a href="admin-dashboard-product.html"><i
+                        class="fa-solid fa-box"></i>
+                    Products</a>
+                <a href="admin-dashboard-orders.html"><i
+                        class="fa-solid fa-cart-shopping"></i> Orders</a>
+                <a href="admin-dashboard-customer.html"><i
+                        class="fa-solid fa-users"></i>
+                    Customers</a>
+                <a href="admin-dashboard-salesreport.html"><i
+                        class="fa-solid fa-chart-line"></i> Sales
+                    Reports</a>
+                <a href="admin-dashboard-transaction.html"><i
+                        class="fa-solid fa-money-bill-transfer"></i>
+                    Transactions</a>
+                <a href="admin-dashboard-reservation.html"><i class="fa-solid fa-calendar-check"></i>
+                    Reservations</a>
+                <a href="admin-dashboard-appointment.html"><i
+                        class="fa-solid fa-calendar-days"></i>
+                    Appointments</a>
+                <a href="admin-dashboard-shipping&delivery.html"
+                    class="active"><i class="fa-solid fa-truck"></i> Shipping &
+                    Delivery</a>
+            </nav>
+        </div>
+    </div>
+    <div class="dash-main">
+        <div class="dash-topbar">
+            <div class="dash-search-box">
+                <div class="search-container">
+                    <input type="text" placeholder="Search William's...">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </div>
+            </div>
+            <div class="dash-top-icons">
+                <i class="fa-solid fa-bell"
+                    onclick="toggleNotificationModal()"></i>
+                <i class="fa-solid fa-envelope"
+                    onclick="toggleMessageModal()"></i>
+            </div>
+            <div class="dash-profile">
+                <img src="assets/logo.png" alt="profile">
+                <div class="profile-info">
+                    <div class="profile-name">William</div>
+                    <div class="profile-role">Administrator</div>
+                </div>
+                <div class="admin-chevron-down" onclick="toggleLogoutMenu()">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div id="logout-menu" class="logout-menu"
+                    style="display: none;">
+                    <a href="logout.html">Logout</a>
+                </div>
+
+                <!-- Notification Modal -->
+                <div id="notificationModal" class="modal"
+                    style="display: none;">
+                    <div class="modal-content">
+                        <span class="close"
+                            onclick="toggleNotificationModal()">&times;</span>
+                        <h3>Notifications</h3>
+                        <ul>
+                            <li>No new notifications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Message Modal -->
+                <div id="messageModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <span class="close"
+                            onclick="toggleMessageModal()">&times;</span>
+                        <h3>Messages</h3>
+                        <ul>
+                            <li>No new messages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="track-container">
+            <div class="track-header">
+              <h1>Shipping / Delivery </h1>
+            </div>
+        
+            <div class="track-summary">
+              <div class="summary-box">Total Shipment<strong>26,666</strong></div>
+              <div class="summary-box">On Delivery<strong>6,500</strong></div>
+              <div class="summary-box">In Transit<strong>5,000</strong></div>
+              <div class="summary-box">Pending<strong>102</strong></div>
+              <div class="summary-box">Canceled<strong>82</strong></div>
+              <div class="summary-box">Shipped<strong>14,982</strong></div>
+            </div>
+            <div class="ft-controls"> 
+                <input type="text" placeholder="Search">
+                <div class="ft-buttons">
+                    <button>Filter</button>
+                    <button>Export</button>
+                </div>
+            </div>
+        
+            <div class="shipping-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Track Number</th>
+                    <th>Customer</th>
+                    <th>Carrier</th>
+                    <th>Shipped Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="shippingTableBody">
+                  <!-- Rows will be dynamically populated here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- MODAL -->
+          <div class="modal-overlay" id="shipmentModal">
+            <div class="modal-content">
+              <button class="close-btn" onclick="closeModal()">&times;</button>
+              <div class="modal-header">#JK982QW80 <span class="badge">In Transit</span></div>
+        <div id="map" class="map-box"></div>
+              <div class="shipment-details">
+                <p><strong>Shipped Date:</strong> Mon, 17 June 2024, 07:01</p>
+                <p><strong>Estimated Date:</strong> Sun, 23 June 2024, 10:02</p>
+                <p><strong>Place of Discharge:</strong> Surabaya, Indonesia</p>
+                <p><strong>Port of Discharge:</strong> Malang, Indonesia</p>
+                <p><strong>Note:</strong> Be Safety Please</p>
+                <p><strong>Customer:</strong> Rifat Zulfan</p>
+              </div>
+        
+              <div class="timeline">
+                <div class="timeline-entry">
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Mon, 17 June 2024, 07:01</strong><br>
+                    Order received and processing for packaging.
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Tue, 18 June 2024, 12:36</strong><br>
+                    Items being packaged by logistics team.
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="dot"></div>
+                  <div>
+                    <strong>Wed, 19 June 2024, 08:12</strong><br>
+                    Items left Surabaya warehouse.
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="dot inactive"></div>
+                  <div>
+                    <strong>Thu, 20 June 2024, 15:20</strong><br>
+                    On the way to Malang.
+                  </div>
+                </div>
+                <div class="timeline-entry">
+                  <div class="dot inactive"></div>
+                  <div>
+                    <strong>Sun, 23 June 2024, 15:20</strong><br>
+                    Delivered to recipient.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <script>
+            function openModal() {
+              document.getElementById('shipmentModal').style.display = 'flex';
+            }
+        
+            function closeModal() {
+              document.getElementById('shipmentModal').style.display = 'none';
+            }
+          </script>
+          <script src="./JS/admin-dashboard-shipping&delivery-table.js"></script>
+        <script src="./JS/admin-logout.js"></script>
+        <script src="./JS/notif&message.js"></script>
+        <script>
+            function initMap() {
+            const mapOptions = {
+                center: { lat: -7.250445, lng: 112.768845 }, // Coordinates for Surabaya, Indonesia
+                zoom: 10,
+            };
+            const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            // Add a marker for Surabaya
+            new google.maps.Marker({
+                position: { lat: -7.250445, lng: 112.768845 },
+                map: map,
+                title: "Surabaya Warehouse",
+            });
+
+            // Add a marker for Malang
+            new google.maps.Marker({
+                position: { lat: -7.966620, lng: 112.632632 },
+                map: map,
+                title: "Malang Destination",
+            });
+            }
+        </script>
+        <script async
+            src="https://maps.googleapis.com/maps/api/js?key=YOUR_VALID_API_KEY&callback=initMap">
+        </script>
+    </body>
+</html>

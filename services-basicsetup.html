@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/shopping-cart.css">
+    <link rel="stylesheet" href="./CSS/checkout.css">
+    <link rel="stylesheet" href="./CSS/services-fullsetup.css">
+    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss"></script>
+    <title>William's Shopping Cart</title>
+</head>
+<body>
+    <!--Navigation and Header Section-->
+    <header class="header">
+        <div class="nametag">
+            <a href="landingpage.html"><img src="assets/williams.png" alt="Williams Logo"></a>
+        </div>
+        <section class="leftheader">
+            <div class="SContainer">
+                <input type="search" placeholder="Search William's....">
+                <img src="assets/Trailing-Elements.png" alt="">
+            </div>
+            <img src="assets/notif-bell.png" alt="Notification Bell" class="icon" style="cursor: pointer; font-size: small;">
+            <img src="assets/shopping-cart.png" alt="Shopping Cart" class="icon" style="cursor: pointer;">
+            <img id="myAvatar" src="assets/Generic-avatar.png" alt="User Icon" style="cursor: pointer;">
+        </section>
+    </header>
+    <section class="navigation">
+      <div>
+          <a href="music-category.html"><h3>Music</h3></a>
+          <span class="arrow">&#8249;</span>
+      </div>
+      <div>
+          <a href="sport-category.html"><h3>Sports</h3></a>
+          <span class="arrow">&#8249;</span>
+      </div>
+      <a href="services-basicsetup.html"><h3>Services</h3></a>
+  </div>
+      <a href="landingpage.html"><h3 class="ab-landing">About us</h3></a>
+  </div>
+  </section>
+
+    <div class="fullsetup-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="hamburger-menu">
+            <i class="fa-solidfa-bars" id="hamburger-icon" style="cursor: pointer;"></i>
+          </div>
+          <h2>Categories</h2>
+          <h3>Services</h3>
+          <div class="category-section">
+            <details>
+              <summary class="full-setup">Full Setup</summary>
+              <ul>
+            <li><a href="#">Fret leveling and Crowning</a></li>
+            <li><a href="#string-height">String Height Adjustment</a></li>
+            <li><a href="#fretboard-recondition">Fretboard Recondition</a></li>
+            <li><a href="#intonation-accuracy">Intonation Accuracy</a></li>
+            <li><a href="#fretwires-polishing">Fretwires Polishing</a></li>
+            <li><a href="#neck-relief">Neck Relief</a></li>
+            <li><a href="#cleaning">Cleaning</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="category-section">
+            <details>
+              <summary class="basic-setup">Basic Setup</summary>
+              <ul>
+            <li><a href="#string-radius-adjustment">String Radius Adjustment</a></li>
+            <li><a href="#fretboard-recondition">Fretboard Recondition</a></li>
+            <li><a href="#intonation-accuracy">Intonation Accuracy</a></li>
+            <li><a href="#right-neck-relief">Right Neck Relief</a></li>
+            <li><a href="#minor-cleaning">Minor Cleaning</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="filter-section">
+            <h3>Search Filter</h3>
+            <input type="text" placeholder="Search..." />
+            <h3>Price Range</h3>
+            <div class="price-range">
+              <input type="number" placeholder="MIN" />
+              <input type="number" placeholder="MAX" />
+         </div>
+         <div class="apply-button">Apply</div>
+            <div class="guitar-type">
+              <input type="checkbox" id="bass-guitar" />
+              <label for="bass-guitar">Bass Guitar</label><br>
+              <input type="checkbox" id="acoustic-guitar" checked />
+              <label for="acoustic-guitar">Acoustic Guitar</label><br>
+              <input type="checkbox" id="electric-guitar" />
+              <label for="electric-guitar">Electric Guitar</label>
+            </div>
+          </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+          <div class="sort-options">
+            <button class="btn-sort" onclick="sortBy('popular')">Recommended</button>
+            <button class="btn-popular"onclick="sortBy('newArrival')">Popular</button>
+          </div>
+          <div class="services-grid">
+            <div class="service-item">
+              <img src="assets/drive-download-20250310T045422Z-001/fretleveling.png" alt="Fret leveling and Crowning" />
+              <h4>Fret leveling and Crowning</h4>
+              <p>₱1,000.00</p>
+            </div>
+            <div class="service-item">
+              <img src="assets/drive-download-20250310T045422Z-001/cleaning.png" alt="Cleaning" />
+              <h4>Cleaning</h4>
+              <p>₱750.00</p>
+            </div>
+            <div class="service-item">
+              <img src="assets/drive-download-20250310T045422Z-001/fretwire-polishing.png" alt="Fretwires Polishing" />
+              <h4>Fretwires Polishing</h4>
+              <p>₱850.00</p>
+            </div>
+            <div class="service-item">
+              <img src="assets/drive-download-20250310T045422Z-001/intonation-accuracy.png" alt="Intonation Accuracy" />
+              <h4>Intonation Accuracy</h4>
+              <p>₱950.00</p>
+            </div>
+            <div class="service-item">
+              <img src="assets/drive-download-20250310T045422Z-001/fretboard-recondition.png" alt="Fretboard Recondition" />
+              <h4>Fretboard Recondition</h4>
+              <p>₱850.00</p>
+            </div>
+            <div class="service-item">
+              <img src="assets/drive-download-20250310T045422Z-001/neck-relief.png" alt="Neck Relief" />
+              <h4>Neck Relief</h4>
+              <p>₱900.00</p>
+            </div>
+            <div class="service-item">
+                <img src="assets/drive-download-20250310T045422Z-001/string-height-adjustment.png" alt="Neck Relief" />
+                <h4>String Height Adjustment</h4>
+                <p>₱700.00</p>
+              </div>
+          </div>
+          <div class="pagination">
+            <div class="page-number current-page" data-page="1">1</div>
+            <div class="page-number" data-page="2">2</div>
+            <div class="page-number" data-page="3">3</div>
+            <div class="page-number" data-page="4">4</div>
+            <div class="page-number" data-page="5">5</div>
+            <div class="next-button">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+        </main>
+      </div>
+      <script src="./JS/pagination.js"></script> 
+      <script>
+        function sortBy(criteria) {
+    const itemsContainer = document.querySelector('.services-grid');
+    const items = Array.from(itemsContainer.children);
+    const buttons = document.querySelectorAll('.btn-sort, .btn-popular');
+
+    // Reset button styles
+    buttons.forEach(button => button.style.backgroundColor = '');
+    buttons.forEach(button => button.style.color = '');
+
+    if (criteria === 'popular') {
+        items.sort((a, b) => {
+            // Example: Sort by price descending (assuming popularity is tied to price)
+            const priceA = parseFloat(a.querySelector('p').textContent.replace('₱', '').replace(',', ''));
+            const priceB = parseFloat(b.querySelector('p').textContent.replace('₱', '').replace(',', ''));
+            return priceB - priceA;
+        });
+
+        // Highlight the Popular button
+        document.querySelector('.btn-sort').style.backgroundColor = '#8D0101';
+        document.querySelector('.btn-sort').style.color = '#FFF';
+    } else if (criteria === 'newArrival') {
+        items.sort((a, b) => {
+            // Example: Sort alphabetically by name
+            const nameA = a.querySelector('h4').textContent.toLowerCase();
+            const nameB = b.querySelector('h4').textContent.toLowerCase();
+            return nameA.localeCompare(nameB);
+        });
+
+        // Highlight the New Arrival button
+        document.querySelector('.btn-popular').style.backgroundColor = '#8D0101';
+        document.querySelector('.btn-popular').style.color = '#FFF';
+    }
+
+    // Clear and re-append sorted items
+    itemsContainer.innerHTML = '';
+    items.forEach(item => itemsContainer.appendChild(item));
+}
+      </script>
+    </body>
+    </html>

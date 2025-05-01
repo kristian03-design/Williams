@@ -1,0 +1,142 @@
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-menu-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.sidebar-section {
+  margin-top: 20px;
+}
+
+.section-heading {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.filter-category {
+  margin-bottom: 20px;
+}
+
+.filter-title {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.filter-subgroup {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.subgroup-heading {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 10px 0 5px;
+}
+
+.filter-option {
+  display: block;
+  font-size: 14px;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label,
+label input[type="checkbox"]:checked {
+  color: #a80000; /* Selected color: dark red */
+  font-weight: bold;
+}
+
+.filter-trophies {
+  margin-left: 1.5px;
+}
+
+.trophies-heading {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 10px 0 10px;
+}
+
+.trophies-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.trophies-list li {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.trophies-list a {
+  text-decoration: none;
+  color: #000;
+}
+.trophies-list a:hover {
+  text-decoration: none;
+  color: #a80000; /* Dark red on hover */
+}
+
+
+.services-grid-sport {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-item-sport {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+   
+  }
+  
+  .service-item-sport img {
+    width: 50%;
+    display: block;
+   justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+  
+  .service-item-sport h4 {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #333;
+    padding: 0 10px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  
+  .service-item-sport p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .services-grid-sport :hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  

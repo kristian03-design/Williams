@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/shopping-cart.css">
+    <link rel="stylesheet" href="./CSS/checkout.css">
+    <link rel="stylesheet" href="./CSS/order-complete.css">
+    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss"></script>
+    <title>William's</title>
+</head>
+    <!--Navigation and Header Section-->
+    <header class="header">
+        <div class="nametag">
+            <img src="assets/williams.png" alt="Williams Logo">
+        </div>
+        <section class="leftheader">
+            <div class="SContainer">
+                <input type="search" placeholder="Search William's....">
+                <img src="assets/Trailing-Elements.png" alt="">
+            </div>
+            <img src="assets/notif-bell.png" alt="Notification Bell" class="icon" style="cursor: pointer;">
+            <img src="assets/shopping-cart.png" alt="Shopping Cart" class="icon" style="cursor: pointer;">
+            <img id="myAvatar" src="assets/Generic-avatar.png" alt="User Icon" style="cursor: pointer;">
+
+            <!-- Login Modal -->
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeLogin">&times;</span>
+                    <h2>Login</h2>
+                    <form>
+                        <label for="loginEmail">Email:</label>
+                        <input type="email" id="loginEmail" name="loginEmail" required>
+                        <label for="loginPassword">Password:</label>
+                        <input type="password" id="loginPassword" name="loginPassword" required>
+                        <a href="landingpage.html"><button type="submit">Login</button></a>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Register Modal -->
+            <div id="registerModal" class="modal">
+                <div class="modal-content">
+                    <h2>Register</h2>
+                    <form>
+                        <label for="registerName">Name:</label>
+                        <input type="text" id="registerName" name="registerName" required>
+                        <label for="registerEmail">Email:</label>
+                        <input type="email" id="registerEmail" name="registerEmail" required>
+                        <label for="registerPassword">Password:</label>
+                        <input type="password" id="registerPassword" name="registerPassword" required>
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                const loginModal = document.getElementById('loginModal');
+                const registerModal = document.getElementById('registerModal');
+                const closeLogin = document.getElementById('closeLogin');
+                const closeRegister = document.getElementById('closeRegister');
+                const avatar = document.getElementById('myAvatar');
+
+                document.querySelector('#loginModal form').addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent form submission
+                    // Simulate login success and redirect to the next page
+                    window.location.href = 'landingpage.html'; // Redirect to another page
+                });
+
+                document.querySelector('#registerModal form').addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent form submission
+                    // Simulate registration success and redirect to the next page
+                    window.location.href = 'welcome.html'; // Redirect to a welcome page
+                });
+
+                // Add admin login button
+                const adminLoginButton = document.createElement('button');
+                adminLoginButton.textContent = 'Admin Login';
+                adminLoginButton.style.marginTop = '15px';
+                adminLoginButton.addEventListener('click', () => {
+                    loginModal.style.display = 'none';
+                    adminLoginModal.style.display = 'block';
+                });
+                document.querySelector('#loginModal .modal-content').appendChild(adminLoginButton);
+
+                // Admin Login Modal
+                const adminLoginModal = document.createElement('div');
+                adminLoginModal.id = 'adminLoginModal';
+                adminLoginModal.className = 'modal';
+                adminLoginModal.innerHTML = `
+                    <div class="modal-content">
+                        <span class="close" id="closeAdminLogin">&times;</span>
+                        <h2>Admin Login</h2>
+                        <form>
+                            <label for="adminEmail">Email:</label>
+                            <input type="email" id="adminEmail" name="adminEmail" required>
+                            <label for="adminPassword">Password:</label>
+                            <input type="password" id="adminPassword" name="adminPassword" required>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                `;
+                document.body.appendChild(adminLoginModal);
+
+                const closeAdminLogin = document.getElementById('closeAdminLogin');
+                closeAdminLogin.addEventListener('click', () => {
+                    adminLoginModal.style.display = 'none';
+                });
+
+                adminLoginModal.querySelector('form').addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent form submission
+                    // Simulate admin login success and redirect to admin dashboard
+                    window.location.href = 'admin-dashboard.html'; // Redirect to admin dashboard
+                });
+
+                window.addEventListener('click', (event) => {
+                    if (event.target === adminLoginModal) {
+                        adminLoginModal.style.display = 'none';
+                    }
+                });
+
+                // Show login modal when avatar is clicked
+
+                avatar.addEventListener('click', () => {
+                    loginModal.style.display = 'block';
+                });
+
+                closeLogin.addEventListener('click', () => {
+                    loginModal.style.display = 'none';
+                });
+
+                closeRegister.addEventListener('click', () => {
+                    registerModal.style.display = 'none';
+                });
+
+                window.addEventListener('click', (event) => {
+                    if (event.target === loginModal) {
+                        loginModal.style.display = 'none';
+                    }
+                    if (event.target === registerModal) {
+                        registerModal.style.display = 'none';
+                    }
+                });
+
+                // Example: Open register modal from login modal
+                const openRegister = document.createElement('p');
+                openRegister.textContent = "Don't have an account? Register here.";
+                openRegister.style.cursor = 'pointer';
+                openRegister.style.color = 'blue';
+                openRegister.addEventListener('click', () => {
+                    loginModal.style.display = 'none';
+                    registerModal.style.display = 'block';
+                });
+                document.querySelector('#loginModal .modal-content').appendChild(openRegister);
+            </script>
+
+            <style>
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 50%;
+                    top: 50%;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: 15% auto;
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 30%;
+                    border-radius: 8px;
+                }
+                .modal-content p, a{
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: #555;
+                }
+
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                label {
+                    margin-top: 10px;
+                }
+                input[type="email"],
+                input[type="password"],
+                input[type="text"] { /* Added input[type="text"] for future use */
+                    border: 1px solid #ccc; /* Added border for better visibility */
+                    padding: 8px; /* Added padding for better spacing */
+                    border-radius: 4px; /* Added border-radius for rounded corners */
+                }
+            
+                input#loginEmail,
+                input#loginPassword {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 5px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+
+                button {
+                    padding: 10px;
+                    background-color: #791d1d;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 30%;
+                    margin-top: 5px;
+                }
+
+                button:hover {
+                    background-color: #45a049;
+                }
+            </style>
+        </section>
+    </header>
+    <section class="navigation">
+        <div>
+            <a href="music-category.html"><h3>Music</h3></a>
+            <span class="arrow">&#8249;</span>
+        </div>
+        <div>
+            <a href="sport-category.html"><h3>Sports</h3></a>
+            <span class="arrow">&#8249;</span>
+        </div>
+        <a href="services-basicsetup.html"><h3>Services</h3></a>
+    </div>
+        <a href="#"><h3 class="ab-landing">About us</h3></a>
+    </div>
+    </section>
+    <div class="maincontent">
+        <div class="maindiv1">
+            <img src="assets/landing-page-image.png" alt="">
+            <div class="dimmed"></div>
+            <div class="maindiv1_text">
+                <h2>Explore the World of Music and Sports</h2>
+                <p>Looking for High Quality Musical Instruments and Sports Equipment?<br>You are in the right place</p>
+            </div>
+        </div>
+        <div class="maindiv2">
+        </div>
+        <div class="maindiv3">
+            <div class="imgcontdiv3-1">
+                <img src="assets/landing-page-balls.png" alt="Instrument Image">
+            </div>
+            <div class="description">
+                <p>Enhance Your Experience<br>With our Instruments and<br>Equipments</p>
+                <ul>
+                    <li>Guaranteed New</li>
+                    <li>High Quality</li>
+                    <li>Original</li>
+                    <li>Wide variety</li>
+                    <li>Affordable</li>
+                </ul>
+                <a href="music-category.html"><button class="Buttonshop">Shop</button></a>
+            </div>
+            <div class="imgcontdiv3-2">
+                <img src="assets/landing-page-guitar.png" alt="Sports Equipment">
+            </div>
+        </div>
+        <section class="appointment">
+            <div class="desccontainer">
+                <p class="mainappointmentdesc">Revive the Harmony Precision Repairs for All Your Musical Instruments</p>
+                <p class="subappointmentdesc">Get your guitar repaired, upgraded, or serviced by our experts—schedule your appointment today!</p>
+            </div>
+            <button class="booking">Book Appointment</button>
+        </section>
+        <div class="maindiv4">
+            <span class="AUimage">
+                <img class="AUimg" src="assets/aboutUs.png" alt="Physical Shop Image">
+            </span>
+            <span class="aboutussec">
+                <h2 class="font-bold">About Us</h2>
+                <p>Welcome to William's Record, your one-stop destination for all things musical and sports. Established in 1995, we have been passionately serving the music community with a diverse range of instruments, accessories, and sports equipment. Our mission is to inspire and support musicians at all levels, from beginners to seasoned professionals.</p>
+            </span>
+        </div>
+        <section class="brands">
+            <img src="assets/Brands.png" alt="Brands">
+        </section>
+        <footer class="footer">
+            <div class="footerleft">
+                <img class="" src="assets/logo.png" alt="Store Logo">
+                <p>Music Store & Sporting <br>Goods</p>
+            </div>
+            <div class="divider"></div>
+            <div class="footerright">
+                <h2 class="spacing">Store Location</h2>
+                <p class="spacing">Cagayan Valley Road, Poblacion, Baliwag, Bulacan</p>
+                <h2 class="spacing">Store Hours</h2>
+                <h4 class="spacing">MON- SAT <br>9:00AM - 7:00PM</h4>
+                <div class="socialmedias">
+                    <img src="assets/facebook.png" alt="Facebook">
+                    <img src="assets/phone-call.png" alt="Contact">
+                </div>
+            </div>
+        </footer>
+    </div>
+   
+</body>
+</html>

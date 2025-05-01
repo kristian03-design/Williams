@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/shopping-cart.css">
+    <link rel="stylesheet" href="./CSS/checkout.css">
+    <link rel="stylesheet" href="./CSS/services-fullsetup.css">
+    <link rel="stylesheet" href="./CSS/music-category.css">
+    <link rel="stylesheet" href="./CSS/sport-category.css">
+    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss"></script>
+    <title>William's Shopping Cart</title>
+</head>
+<body>
+    <!--Navigation and Header Section-->
+    <header class="header">
+        <div class="nametag">
+            <a href="landingpage.html"><img src="assets/williams.png" alt="Williams Logo"></a>
+        </div>
+        <section class="leftheader">
+            <div class="SContainer">
+                <input type="search" placeholder="Search William's....">
+                <img src="assets/Trailing-Elements.png" alt="">
+            </div>
+            <img src="assets/notif-bell.png" alt="Notification Bell" class="icon" style="cursor: pointer; font-size: small;">
+            <img src="assets/shopping-cart.png" alt="Shopping Cart" class="icon" style="cursor: pointer;">
+            <img id="myAvatar" src="assets/Generic-avatar.png" alt="User Icon" style="cursor: pointer;">
+        </section>
+    </header>
+    <section class="navigation">
+      <div>
+          <a href="music-category.html"><h3>Music</h3></a>
+          <span class="arrow">&#8249;</span>
+      </div>
+      <div>
+          <a href="sport-category.html"><h3>Sports</h3></a>
+          <span class="arrow">&#8249;</span>
+      </div>
+      <a href="services-basicsetup.html"><h3>Services</h3></a>
+  </div>
+      <a href="landingpage.html"><h3 class="ab-landing">About us</h3></a>
+  </div>
+  </section>
+
+    <div class="fullsetup-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="hamburger-menu">
+          </div>
+          <h2>Categories</h2>
+          <div class="category-section">
+            <details>
+              <summary class="filter-title">Basketball</summary>
+              <div class="filter-subgroup">
+                <p class="subgroup-heading">By Size</p>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="size-7"> Size 7 (Official/Men’s)</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="size-6"> Size 6 (Women’s/Youth)</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="size-5"> Size 5 (Junior/Children)</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="size-3"> Size 3 (Mini/Training)</label>
+              </div>
+
+              <div class="filter-subgroup">
+                <p class="subgroup-heading">By Material</p>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="leather"> Leather</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="composite-leather"> Composite Leather</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="rubber"> Rubber</label>
+              </div>
+            </details>
+          </div>
+
+          <div class="filter-category">
+            <details>
+              <summary class="filter-title">Volleyball</summary>
+
+              <div class="filter-subgroup">
+                <p class="subgroup-heading">By Purpose</p>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="indoor"> Indoor Volleyballs</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="beach"> Beach Volleyballs</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="training"> Training Volleyballs</label>
+              </div>
+
+              <div class="filter-subgroup">
+                <p class="subgroup-heading">By Size</p>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="official-size"> Official Size</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="youth-size"> Youth Size</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="mini"> Mini Volleyballs</label>
+              </div>
+
+              <div class="filter-subgroup">
+                <p class="subgroup-heading">By Material</p>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="synthetic-leather"> Synthetic Leather</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="composite-leather"> Composite Leather</label>
+                <label class="filter-option"><input type="checkbox" class="filter-checkbox" data-filter="rubber"> Rubber</label>
+              </div>
+            </details>
+          </div>
+
+          <div class="filter-trophies">
+            <p class="trophies-heading">Trophies</p>
+            <ul class="trophies-list">
+              <li><a href="#" class="filter-link" data-filter="basketball-trophy">Basketball Trophy</a></li>
+              <li><a href="#" class="filter-link" data-filter="volleyball-trophy">Volleyball Trophy</a></li>
+            </ul>
+            </details>
+          </div>
+          <div class="filter-section">
+            <h3>Search Filter</h3>
+            <input type="text" placeholder="Search..." />
+            <h3>Price Range</h3>
+            <div class="price-range">
+              <input type="number" placeholder="MIN" />
+              <input type="number" placeholder="MAX" />
+         </div>
+         <div class="apply-button">Apply</div>
+            <div class="guitar-type">
+                <h3>Brands</h3>
+              <input type="checkbox" id="bass-guitar" />
+              <label for="bass-guitar">Nike</label><br>
+              <input type="checkbox" id="acoustic-guitar"/>
+              <label for="acoustic-guitar">Spalding</label><br>
+              <input type="checkbox" id="electric-guitar"/>
+              <label for="electric-guitar">Wilson</label><br>
+              <input type="checkbox" id="electric-guitar"/>
+                <label for="electric-guitar">Molten</label><br>
+                <input type="checkbox" id="electric-guitar"/>
+                <label for="electric-guitar">Mikasa</label><br>
+            </div>
+          </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+          <div class="sort-options">
+            <button class="btn-sort" onclick="sortBy('popular')">Popular</button>
+            <button class="btn-popular" onclick="sortBy('newArrival')">New Arrival</button>
+          </div>
+          <div class="services-grid-sport">
+            <div class="service-item-sport">
+              <img src="assets/image 19.png" alt="Fret leveling and Crowning"/>
+              <h4> Spalding Official NBA Game Ball</h4>
+              <p>₱5,500.00</p>
+            </div>
+            <div class="service-item-sport">
+              <img src="assets/Spalding NBA Zi_O Excel 1.png" alt="Cleaning" />
+              <h4>Spalding NBA Zi/O Excel</h4>
+              <p>₱3,200.00</p>
+            </div>
+            <div class="service-item-sport">
+              <img src="assets/Spalding Street Basketball 1.png" alt="Fretwires Polishing" />
+              <h4>Spalding Street Basketball</h4>
+              <p>₱1,800.00</p>
+            </div>
+            <div class="service-item-sport">
+              <img src="assets/Spalding NBA Dribbler 1.png" alt="Intonation Accuracy" />
+              <h4>Spalding NBA Dribbler</h4>
+              <p>₱1,500.00</p>
+            </div>
+            <div class="service-item-sport">
+              <img src="assets/Spalding Never Flat Basketball 1.png" alt="Fretboard Recondition" />
+              <h4>Spalding Never Flat Basketball</h4>
+              <p>₱3,800.00</p>
+            </div>
+            <div class="service-item-sport">
+              <img src="assets/Spalding Eco-Composite Basketball 1.png" alt="Neck Relief" />
+              <h4>Spalding Eco-Composite Basketball</h4>
+              <p>₱2,800.00</p>
+            </div>
+            <div class="service-item-sport">
+                <img src="assets/Spalding TF-1000 Classic 1.png" alt="Neck Relief" />
+                <h4>Spalding TF-1000 Classic</h4>
+                <p>₱4,200.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/image 19.png" alt="Neck Relief" />
+                <h4>Spalding Rookie Gear</h4>
+                <p>₱1,200.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/image 19.png" alt="Neck Relief" />
+                <h4>Spalding Slam Jam</h4>
+                <p>₱1,000.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/image 19.png" alt="Neck Relief" />
+                <h4>Spalding NBA Mini Basketball</h4>
+                <p>₱1,200.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/image 19.png" alt="Neck Relief" />
+                <h4>Spalding TF-500 Basketball</h4>
+                <p>₱2,500.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/image 19.png" alt="Neck Relief" />
+                <h4>Spalding Basketball (Rubber) Youth Ball</h4>
+                <p>₱1,500.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/mikasa.png" alt="Neck Relief" />
+                <h4>Mikasa V200W</h4>
+                <p>₱2,500.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/wilson-avp.webp" alt="Neck Relief" />
+                <h4>Wilson AVP Indoor Volleyball</h4>
+                <p>₱1,500.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/molten-volleyball.jpg" alt="Neck Relief" />
+                <h4>Molten V5M5000 Indoor Volleyball</h4>
+                <p>₱2,500.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/nike-volleyball.jpg" alt="Neck Relief" />
+                <h4>Nike Vapor Volleyball</h4>
+                <p>₱1,500.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/spalding-indoor-volleyball.jpg" alt="Neck Relief" />
+                <h4>Spalding TF-V5 Indoor Volleyball</h4>
+                <p>₱2,500.00</p>
+              </div>
+              <div class="service-item-sport">
+                <img src="assets/asics-volleyball.jpg" alt="Neck Relief" />
+                <h4>Asics VolleyBall</h4>
+                <p>₱1,500.00</p>
+              </div>
+          </div>
+            <div class="pagination">
+            <div class="page-number current-page" data-page="1">1</div>
+            <div class="page-number" data-page="2">2</div>
+            <div class="page-number" data-page="3">3</div>
+            <div class="page-number" data-page="4">4</div>
+            <div class="page-number" data-page="5">5</div>
+            <div class="next-button">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+            </div>
+            <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const itemsPerPage = 12;
+              const items = document.querySelectorAll('.service-item-sport');
+              const pageNumbers = document.querySelectorAll('.page-number');
+              const nextButton = document.querySelector('.next-button');
+
+              function showPage(page) {
+              const start = (page - 1) * itemsPerPage;
+              const end = start + itemsPerPage;
+
+              items.forEach((item, index) => {
+                item.style.display = index >= start && index < end ? 'block' : 'none';
+              });
+
+              pageNumbers.forEach(pageNumber => {
+                pageNumber.classList.toggle('current-page', pageNumber.dataset.page == page);
+              });
+              }
+
+              pageNumbers.forEach(pageNumber => {
+              pageNumber.addEventListener('click', () => {
+                const page = parseInt(pageNumber.dataset.page);
+                showPage(page);
+              });
+              });
+
+              nextButton.addEventListener('click', () => {
+              const currentPage = document.querySelector('.page-number.current-page');
+              const nextPage = parseInt(currentPage.dataset.page) + 1;
+
+              if (nextPage <= pageNumbers.length) {
+                showPage(nextPage);
+              }
+              });
+
+              // Initialize the first page
+              showPage(1);
+            });
+            </script>
+        </main>
+      </div>
+      <script src="./JS/pagination.js"></script> 
+      <script src="./JS/sort-option.sports.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const checkboxes = document.querySelectorAll('.filter-checkbox');
+          const links = document.querySelectorAll('.filter-link');
+          const items = document.querySelectorAll('.service-item-sport');
+
+          function filterItems() {
+            const activeFilters = Array.from(checkboxes)
+              .filter(checkbox => checkbox.checked)
+              .map(checkbox => checkbox.dataset.filter);
+
+            items.forEach(item => {
+              const itemFilters = item.dataset.filters ? item.dataset.filters.split(' ') : [];
+              const isVisible = activeFilters.every(filter => itemFilters.includes(filter));
+              item.style.display = isVisible ? 'block' : 'none';
+            });
+          }
+
+          checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterItems);
+          });
+
+          links.forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const filter = e.target.dataset.filter;
+              checkboxes.forEach(checkbox => {
+                checkbox.checked = checkbox.dataset.filter === filter;
+              });
+              filterItems();
+            });
+          });
+        });
+      </script>
+    </body>
+    </html>

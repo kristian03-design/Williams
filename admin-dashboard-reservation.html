@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./CSS/index.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard.css">
+        <link rel="stylesheet" href="./CSS/dashboard-product.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-orders.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-customer.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-transaction.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-appointment.css">
+        <link rel="stylesheet" href="./CSS/admin-dashboard-reservation.css">
+
+        <script src="https://kit.fontawesome.com/e588cb9d47.js"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss"></script>
+        <title>William's Dashboard</title>
+    </head>
+    <body>
+        <div class="dash-sidebar">
+            <div class="dash-logo">
+                <img src="assets/williams.png" alt="William's Logo">
+            </div>
+            <nav>
+                <a href="admin-dashboard.html"><i class="fa-solid fa-gauge"></i>
+                    Dashboard</a>
+                <a href="admin-dashboard-product.html"><i
+                        class="fa-solid fa-box"></i>
+                    Products</a>
+                <a href="admin-dashboard-orders.html"><i
+                        class="fa-solid fa-cart-shopping"></i> Orders</a>
+                <a href="admin-dashboard-customer.html"><i
+                        class="fa-solid fa-users"></i>
+                    Customers</a>
+                <a href="admin-dashboard-salesreport.html"><i
+                        class="fa-solid fa-chart-line"></i> Sales
+                    Reports</a>
+                <a href="admin-dashboard-transaction.html"><i
+                        class="fa-solid fa-money-bill-transfer"></i>
+                    Transactions</a>
+                <a href="admin-dashboard-reservation.html" class="active"><i
+                        class="fa-solid fa-calendar-check"></i>
+                    Reservations</a>
+                <a href="admin-dashboard-appointment.html"><i
+                        class="fa-solid fa-calendar-days"></i>
+                    Appointments</a>
+                <a href="admin-dashboard-shipping&delivery.html"><i
+                        class="fa-solid fa-truck"></i> Shipping &
+                    Delivery</a>
+            </nav>
+        </div>
+    </div>
+    <div class="dash-main">
+        <div class="dash-topbar">
+            <div class="dash-search-box">
+                <div class="search-container">
+                    <input type="text" placeholder="Search William's...">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </div>
+            </div>
+            <div class="dash-top-icons">
+                <i class="fa-solid fa-bell"
+                    onclick="toggleNotificationModal()"></i>
+                <i class="fa-solid fa-envelope"
+                    onclick="toggleMessageModal()"></i>
+            </div>
+            <div class="dash-profile">
+                <img src="assets/logo.png" alt="profile">
+                <div class="profile-info">
+                    <div class="profile-name">William</div>
+                    <div class="profile-role">Administrator</div>
+                </div>
+                <div class="admin-chevron-down" onclick="toggleLogoutMenu()">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div id="logout-menu" class="logout-menu"
+                    style="display: none;">
+                    <a href="logout.html">Logout</a>
+                </div>
+
+                <!-- Notification Modal -->
+                <div id="notificationModal" class="modal"
+                    style="display: none;">
+                    <div class="modal-content">
+                        <span class="close"
+                            onclick="toggleNotificationModal()">&times;</span>
+                        <h3>Notifications</h3>
+                        <ul>
+                            <li>No new notifications</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Message Modal -->
+                <div id="messageModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <span class="close"
+                            onclick="toggleMessageModal()">&times;</span>
+                        <h3>Messages</h3>
+                        <ul>
+                            <li>No new messages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Reservation List-->
+        <div class="resv-controls">
+            <select id="resv-status-filter" class="resv-select">
+                <option value="all">All</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="pending">Pending</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+            <input type="text" id="resv-search-input" class="resv-search-input"
+                placeholder="Search...">
+            <button class="resv-btn-yellow"
+                onclick="alert('View all clicked!')">View all</button>
+        </div>
+
+        <table id="resv-table" class="resv-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JavaScript will insert reservation rows here -->
+            </tbody>
+        </table>
+
+        <script>
+   const resvData = [
+ { id: "1001", name: "John Smith", phone: "0923-1456-293", date: "2023-08-25", time: "18:30", status: "confirmed" },
+ { id: "1002", name: "Emily Johnson", phone: "0905-2852-992", date: "2023-08-26", time: "19:00",  status: "confirmed" },
+ { id: "1003", name: "David Martinez", phone: "0995-2853-902", date: "2023-08-28", time: "20:00",  status: "pending" },
+  { id: "1004", name: "Sarah Williams", phone: "0923-2282-582", date: "2023-08-29", time: "19:30",  status: "confirmed" },
+ { id: "1005", name: "Michael Brown", phone: "0985-8351-100", date: "2023-08-25", time: "20:15",  status: "pending" },
+  { id: "1006", name: "Amanda Davis", phone: "0948-3478-909", date: "2023-08-25", time: "18:30",  status: "pending" },
+   { id: "1007", name: "Daniel Taylor", phone: "0973-5782-952", date: "2023-08-25", time: "19:00",  status: "confirmed" },
+ { id: "1008", name: "Olivia Jackson", phone: "0985-7824-900", date: "2023-08-25", time: "20:00",  status: "cancelled" },
+   { id: "1009", name: "Sophia Garcia", phone: "0976-4729-995", date: "2023-08-25", time: "15:00",  status: "cancelled" },
+                  ];
+              
+    const resvTableBody = document.querySelector('#resv-table tbody');
+    const resvSearchInput = document.getElementById('resv-search-input');
+    const resvStatusFilter = document.getElementById('resv-status-filter');
+
+    function renderResvTable(data) {
+      resvTableBody.innerHTML = '';
+      data.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${r.id}</td>
+          <td>${r.name}</td>
+          <td>${r.phone}</td>
+          <td>${r.date}</td>
+          <td>${r.time}</td>
+        
+          <td class="resv-status resv-${r.status}">${r.status.charAt(0).toUpperCase() + r.status.slice(1)}</td>
+        `;
+        resvTableBody.appendChild(tr);
+      });
+    }
+
+    function filterResvTable() {
+      const searchVal = resvSearchInput.value.toLowerCase();
+      const statusVal = resvStatusFilter.value;
+
+      const filtered = resvData.filter(r => {
+        const matchesSearch = r.name.toLowerCase().includes(searchVal) || r.phone.includes(searchVal);
+        const matchesStatus = statusVal === 'all' || r.status === statusVal;
+        return matchesSearch && matchesStatus;
+      });
+
+      renderResvTable(filtered);
+    }
+
+    resvSearchInput.addEventListener('input', filterResvTable);
+    resvStatusFilter.addEventListener('change', filterResvTable);
+
+    renderResvTable(resvData);
+                </script>
+        <script src="./JS/admin-logout.js"></script>
+        <script src="./JS/notif&message.js"></script>
+
+    </body>
+</html>

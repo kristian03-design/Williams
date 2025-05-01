@@ -1,0 +1,75 @@
+
+  .resv-controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    position: relative;
+    left: 68%;
+    margin-top: 2rem;
+    width: 30%;
+  }
+
+  .resv-select,
+  .resv-search-input {
+    padding: 10px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    box-shadow: none;
+   
+  }
+
+  .resv-btn,
+  .resv-btn-yellow {
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .resv-btn-yellow {
+    background: #791d1d;
+    color: white;
+    font-weight: 500;
+  }
+
+  .resv-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .resv-table thead {
+    background: #f3f4f6;
+  }
+
+  .resv-table th,
+  .resv-table td {
+    padding: 1.30rem 2rem;
+    font-size: 0.875rem;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .resv-status {
+    font-weight: 400;
+  }
+
+  .resv-confirmed {
+    color: #10b981;
+  }
+
+  .resv-pending {
+    color: #f59e0b;
+  }
+  .resv-cancelled {
+    color: #ff3b30;
+  }
+  

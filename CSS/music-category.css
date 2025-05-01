@@ -1,0 +1,42 @@
+.services-grid-music {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .service-item-music {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service-item-music img {
+    width: 70%;
+    display: block;
+   justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .service-item-music h4 {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #333;
+    padding: 0 10px;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+  }
+  
+  .service-item-music p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .services-grid-music :hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+  

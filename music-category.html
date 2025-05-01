@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/shopping-cart.css">
+    <link rel="stylesheet" href="./CSS/checkout.css">
+    <link rel="stylesheet" href="./CSS/services-fullsetup.css">
+    <link rel="stylesheet" href="./CSS/music-category.css">
+    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss"></script>
+    <title>William's Shopping Cart</title>
+</head>
+<body>
+    <!--Navigation and Header Section-->
+    <header class="header">
+        <div class="nametag">
+            <a href="landingpage.html"><img src="assets/williams.png" alt="Williams Logo"></a>
+        </div>
+        <section class="leftheader">
+            <div class="SContainer">
+                <input type="search" placeholder="Search William's....">
+                <img src="assets/Trailing-Elements.png" alt="">
+            </div>
+            <img src="assets/notif-bell.png" alt="Notification Bell" class="icon" style="cursor: pointer; font-size: small;">
+            <img src="assets/shopping-cart.png" alt="Shopping Cart" class="icon" style="cursor: pointer;">
+            <img id="myAvatar" src="assets/Generic-avatar.png" alt="User Icon" style="cursor: pointer;">
+        </section>
+    </header>
+    <section class="navigation">
+      <div>
+          <a href="music-category.html"><h3>Music</h3></a>
+          <span class="arrow">&#8249;</span>
+      </div>
+      <div>
+          <a href="sport-category.html"><h3>Sports</h3></a>
+          <span class="arrow">&#8249;</span>
+      </div>
+      <a href="services-basicsetup.html"><h3>Services</h3></a>
+      </div>
+      <a href="landingpage.html"><h3 class="ab-landing">About us</h3></a>
+    </div>
+  </section>
+
+    <div class="fullsetup-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="hamburger-menu">
+          </div>
+          <h2>Categories</h2>
+          <div class="category-section">
+            <details>
+              <summary class="full-setup">Acoustic Guitars</summary>
+              <ul>
+            <li><a href="#">Steel-String Acoustic</a></li>
+            <li><a href="#string-height">Classical (Nylon-String)</a></li>
+            <li><a href="#fretboard-recondition">Acoustic-Electric</a></li>
+            <li><a href="#intonation-accuracy">Resonator Guitar</a></li>
+            <li><a href="#fretwires-polishing">12-String Acoustic</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="category-section">
+            <details>
+              <summary class="basic-setup">Electric Guitars</summary>
+              <ul>
+            <li><a href="#string-radius-adjustment">Solid-Body Electric</a></li>
+            <li><a href="#fretboard-recondition">Semi-Hollow Body Electric</a></li>
+            <li><a href="#intonation-accuracy">Hollow Body Electric</a></li>
+            <li><a href="#right-neck-relief">7-String Electric</a></li>
+            <li><a href="#minor-cleaning">8-String Electric</a></li>
+            <li><a href="#minor-cleaning">Baritone Electric</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="category-section">
+            <details>
+              <summary class="basic-setup">Bass Guitars</summary>
+              <ul>
+            <li><a href="#string-radius-adjustment">4-String Bass</a></li>
+            <li><a href="#fretboard-recondition">5-String Bass</a></li>
+            <li><a href="#intonation-accuracy">Fretless Bass</a></li>
+            <li><a href="#right-neck-relief">Acoustic Bass Guitar</a></li>
+            <li><a href="#minor-cleaning">8-String Electric</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="category-section">
+            <details>
+              <summary class="basic-setup">Ukeleles</summary>
+              <ul>
+            <li><a href="#string-radius-adjustment">Soprano Ukulele</a></li>
+            <li><a href="#fretboard-recondition">Concert Ukulele</a></li>
+            <li><a href="#intonation-accuracy">Baritone Ukulele</a></li>
+            <li><a href="#right-neck-relief">Tenor Ukulele</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="category-section">
+            <details>
+              <summary class="basic-setup">Amplifiers</summary>
+              <ul>
+            <li><a href="#string-radius-adjustment">Guitar Amplifiers</a></li>
+            <li><a href="#fretboard-recondition">Bass Amplifiers</a></li>
+            <li><a href="#intonation-accuracy">Electric Guitar Amplifiers</a></li>
+            <li><a href="#right-neck-relief">Power Amplifiers</a></li>
+            <li><a href="#minor-cleaning">Microphone/PA Amplifiers</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="category-section">
+            <details>
+              <summary class="basic-setup">Strings and other Components</summary>
+              <ul>
+            <li><a href="#string-radius-adjustment">String Radius Adjustment</a></li>
+            <li><a href="#fretboard-recondition">Fretboard Recondition</a></li>
+            <li><a href="#intonation-accuracy">Intonation Accuracy</a></li>
+            <li><a href="#right-neck-relief">Right Neck Relief</a></li>
+            <li><a href="#minor-cleaning">Minor Cleaning</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="filter-section">
+            <h3>Search Filter</h3>
+            <input type="text" placeholder="Search..." />
+            <h3>Price Range</h3>
+            <div class="price-range">
+              <input type="number" placeholder="MIN" />
+              <input type="number" placeholder="MAX" />
+         </div>
+         <div class="apply-button">Apply</div>
+            <div class="guitar-type">
+                <h3>Brands</h3>
+              <input type="checkbox" id="bass-guitar" />
+              <label for="bass-guitar">Fender</label><br>
+              <input type="checkbox" id="acoustic-guitar"/>
+              <label for="acoustic-guitar">Gibson</label><br>
+              <input type="checkbox" id="electric-guitar"/>
+              <label for="electric-guitar">Ybanez</label><br>
+              <input type="checkbox" id="electric-guitar"/>
+                <label for="electric-guitar">Yamaha</label><br>
+                <input type="checkbox" id="electric-guitar"/>
+                <label for="electric-guitar">Epiphone</label><br>
+            </div>
+          </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="main-content">
+          <div class="sort-options">
+            <button class="btn-sort" onclick="sortBy('popular')">Popular</button>
+            <button class="btn-popular" onclick="sortBy('newArrival')">New Arrival</button>
+          </div>
+          <div class="services-grid-music">
+            <div class="service-item-music">
+              <a href="product-description.html"><img src="assets/Yamaha FG800.png" alt="Fret leveling and Crowning"/></a>
+              <h4>Yamaha FG800</h4>
+              <p>₱15,000.00</p>
+            </div>
+            <div class="service-item-music">
+              <img src="assets/drive-download-20250310T045422Z-001/Fender CD-60S.png" alt="Cleaning" />
+              <h4>Fender CD-60S</h4>
+              <p>₱13,000.00</p>
+            </div>
+            <div class="service-item-music">
+              <img src="assets/Taylor GS Mini.png" alt="Fretwires Polishing" />
+              <h4>Taylor GS Mini</h4>
+              <p>₱35,000.00</p>
+            </div>
+            <div class="service-item-music">
+              <img src="assets/drive-download-20250310T045422Z-001/Ibanez AW54OPN.png" alt="Intonation Accuracy" />
+              <h4>Ibanez AW54OPN</h4>
+              <p>₱8,000.00</p>
+            </div>
+            <div class="service-item-music">
+              <img src="assets/Martin D-28.png" alt="Fretboard Recondition" />
+              <h4>Martin D-28</h4>
+              <p>₱30,000.00</p>
+            </div>
+            <div class="service-item-music">
+              <img src="assets/drive-download-20250310T045422Z-001/Epiphone DR-100.png" alt="Neck Relief" />
+              <h4>Epiphone DR-100</h4>
+              <p>₱8,500.00</p>
+            </div>
+            <div class="service-item-music">
+                <img src="assets/Takamine GD11MCE.png" alt="Neck Relief" />
+                <h4>Takamine GD11MCE</h4>
+                <p>₱7,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/drive-download-20250310T045422Z-001/Cort AD810.png" alt="Neck Relief" />
+                <h4>Cort AD810</h4>
+                <p>₱8,000.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/drive-download-20250310T045422Z-001/Seagull S6 Original.png" alt="Neck Relief" />
+                <h4>Seagull S6 Original</h4>
+                <p>₱12,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/ibanez-electric.jpg" alt="Neck Relief" />
+                <h4>Ibanez GRX70QA Electric Guitar</h4>
+                <p>₱12,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/fender-electric.jpg" alt="Neck Relief" />
+                <h4>Squier Affinity Stratocaster Electric Guitar</h4>
+                <p>₱8,000.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/yamaha-electric.jpg" alt="Neck Relief" />
+                <h4>Yamaha Pacifica 112V Electric Guitar</h4>
+                <p>₱12,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/Fender Player Stratocaster.jpg" alt="Neck Relief" />
+                <h4>Fender Player Stratocaster Electric Guitar</h4>
+                <p>₱12,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/gibson.png" alt="Neck Relief" />
+                <h4>Gibson ES-335 Electric Guitar</h4>
+                <p>₱8,000.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/Schecter Hellraiser C-1.jpg" alt="Neck Relief" />
+                <h4>Schecter Hellraiser C-1 Electric Guitar</h4>
+                <p>₱12,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/Cort C4 Deluxe Bass Guitar.webp" alt="Neck Relief" />
+                <h4>Cort C4 Deluxe Bass Guitar</h4>
+                <p>₱12,500.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/5 string bass.jpg" alt="Neck Relief" />
+                <h4>SX SWB1/5 5-String Bass Guitar (Natural)</h4>
+                <p>₱8,000.00</p>
+              </div>
+              <div class="service-item-music">
+                <img src="assets/fretless.webp" alt="Neck Relief" />
+                <h4>Cort B4FL MHPZ Fretless Bass Guitar</h4>
+                <p>₱12,500.00</p>
+              </div>
+            </div>
+            <div class="pagination">
+            <div class="page-number current-page" data-page="1">1</div>
+            <div class="page-number" data-page="2">2</div>
+            <div class="page-number" data-page="3">3</div>
+            <div class="page-number" data-page="4">4</div>
+            <div class="page-number" data-page="5">5</div>
+            <div class="next-button" onclick="goToNextPage()">
+             <i class="fas fa-chevron-right"></i>
+            </div>
+            </div>
+            <script>
+            const itemsPerPage = 9; // Adjust based on your layout
+            let currentPage = 1;
+
+            function goToNextPage() {
+              const totalPages = document.querySelectorAll('.page-number').length;
+                if (currentPage < totalPages) {
+                currentPage++;
+                updatePage();
+                }
+              }
+
+              function goToFirstPage() {
+                currentPage = 1;
+                updatePage();
+              }
+
+              // Add event listener for the first page button
+                document.querySelectorAll('.page-number').forEach(page => {
+                page.addEventListener('click', () => {
+                  currentPage = parseInt(page.dataset.page, 10);
+                  updatePage();
+                });
+                });
+
+            function updatePage() {
+              const items = document.querySelectorAll('.service-item-music');
+              const totalItems = items.length;
+              const start = (currentPage - 1) * itemsPerPage;
+              const end = start + itemsPerPage;
+
+              items.forEach((item, index) => {
+              if (index >= start && index < end) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+              });
+
+              document.querySelectorAll('.page-number').forEach(page => {
+              page.classList.remove('current-page');
+              });
+              document.querySelector(`.page-number[data-page="${currentPage}"]`).classList.add('current-page');
+            }
+
+            // Initialize the first page
+            updatePage();
+            </script>
+        </main>
+      </div>
+      <script src="./JS/sort-options.js"></script>
+      
+    </body>
+    </html>
