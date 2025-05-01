@@ -156,7 +156,7 @@ input {
     align-items: center;
     gap: clamp(10px, 2vw, 20px);
     background-color: #AE1919;
-    padding: 0.5rem;
+    padding: 0.4rem;
 }
 
 .navigation a{
