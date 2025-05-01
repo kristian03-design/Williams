@@ -9,7 +9,7 @@ function getMusicCategories() {
     $result = $mysqli_conn->query($sql);
     $categories = [];
     
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $categories[] = $row;
     }
     
@@ -23,7 +23,7 @@ function getSubcategories($parentId) {
     $result = $mysqli_conn->query($sql);
     $subcategories = [];
     
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $subcategories[] = $row;
     }
     
@@ -93,7 +93,7 @@ function getSubcategories($parentId) {
                         ORDER BY b.name";
                 $result = $conn->query($sql);
                 
-                while ($row = $result->fetch_assoc()) {
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     echo '<div class="flex items-center mb-1">';
                     echo '<input type="checkbox" id="brand_' . $row['id'] . '" class="mr-2">';
                     echo '<label for="brand_' . $row['id'] . '">' . $row['name'] . '</label>';
@@ -132,8 +132,8 @@ function getSubcategories($parentId) {
             // Get products
             $categoryFilter = "";
             if (isset($_GET['slug'])) {
-                $slug = $conn->real_escape_string($_GET['slug']);
-                $categoryFilter = "AND c.slug = '$slug'";
+                $slug = $_GET['slug'];
+                $categoryFilter = "AND c.slug = :slug";
             } else {
                 $categoryFilter = "AND (c.name = 'Music' OR c.parent_id = (SELECT id FROM categories WHERE name = 'Music'))";
             }
@@ -145,9 +145,14 @@ function getSubcategories($parentId) {
                     WHERE 1=1 $categoryFilter
                     ORDER BY p.is_featured DESC, p.created_at DESC
                     LIMIT 12";
-            $result = $conn->query($sql);
+            $stmt = $conn->prepare($sql);
+            if (isset($_GET['slug'])) {
+                $stmt->bindParam(':slug', $slug, PDO::PARAM_STR);
+            }
+            $stmt->execute();
+            $result = $stmt;
             
-            while ($product = $result->fetch_assoc()) {
+            while ($product = $result->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                 <div class="bg-white rounded shadow-sm">
                     <?php if ($product['is_new_arrival']): ?>
